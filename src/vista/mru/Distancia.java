@@ -1,5 +1,6 @@
 package vista.mru;
 
+import controlador.Utilidades;
 import javax.swing.JOptionPane;
 import modelo.ModeloMovRecUni;
 import modelo.convertidor.ModeloLongitud;
@@ -16,6 +17,7 @@ public class Distancia extends javax.swing.JPanel {
     ModeloVelocidad mv = new ModeloVelocidad();
     ModeloTiempo mt = new ModeloTiempo();
     ModeloLongitud ml = new ModeloLongitud();
+    Utilidades util = new Utilidades();
 
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -83,6 +85,11 @@ public class Distancia extends javax.swing.JPanel {
         btnLimpiar.setForeground(new java.awt.Color(0, 0, 0));
         btnLimpiar.setText("Limpiar");
         btnLimpiar.setBorder(null);
+        btnLimpiar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLimpiarActionPerformed(evt);
+            }
+        });
         add(btnLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 386, 73, 32));
 
         jLabel5.setFont(new java.awt.Font("Montserrat ExtraBold", 0, 27)); // NOI18N
@@ -210,6 +217,10 @@ public class Distancia extends javax.swing.JPanel {
                     "Debe rellenar todos los campos para continuar.");
         }
     }//GEN-LAST:event_btnCalcularActionPerformed
+
+    private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed
+        util.limpiarCampos(this);
+    }//GEN-LAST:event_btnLimpiarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
