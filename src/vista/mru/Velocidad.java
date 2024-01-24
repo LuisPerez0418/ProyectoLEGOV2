@@ -4,6 +4,10 @@
  */
 package vista.mru;
 
+import java.awt.Component;
+import java.awt.Container;
+import javax.swing.JTextField;
+
 /**
  *
  * @author Gutiérrez
@@ -15,6 +19,17 @@ public class Velocidad extends javax.swing.JPanel {
      */
     public Velocidad() {
         initComponents();
+    }
+    private void limpiarCampos(){
+        
+        Component[] components = this.getComponents();
+        
+        for (Component component : components) {
+            if(component instanceof JTextField){
+                JTextField textField = (JTextField)component;
+                textField.setText("");
+            }
+        }
     }
 
     /**
@@ -44,85 +59,67 @@ public class Velocidad extends javax.swing.JPanel {
 
         setBackground(new java.awt.Color(255, 255, 255));
 
-        cmbTiempoFinal.setBackground(new java.awt.Color(255, 255, 255));
         cmbTiempoFinal.setFont(new java.awt.Font("Montserrat Medium", 0, 12)); // NOI18N
-        cmbTiempoFinal.setForeground(new java.awt.Color(0, 0, 0));
         cmbTiempoFinal.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "s", "min", "h" }));
         cmbTiempoFinal.setBorder(null);
 
-        txtTiempoFinal.setBackground(new java.awt.Color(255, 255, 255));
         txtTiempoFinal.setFont(new java.awt.Font("Montserrat Medium", 0, 12)); // NOI18N
-        txtTiempoFinal.setForeground(new java.awt.Color(0, 0, 0));
         txtTiempoFinal.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 204, 204), 1, true));
 
         jLabel4.setBackground(new java.awt.Color(0, 0, 0));
         jLabel4.setFont(new java.awt.Font("Montserrat Medium", 0, 14)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("Tiempo Final");
 
         btnCalcular.setBackground(new java.awt.Color(204, 204, 204));
         btnCalcular.setFont(new java.awt.Font("Montserrat Medium", 0, 12)); // NOI18N
-        btnCalcular.setForeground(new java.awt.Color(0, 0, 0));
         btnCalcular.setText("Calcular");
         btnCalcular.setBorder(null);
 
         btnLimpiar.setBackground(new java.awt.Color(204, 204, 204));
         btnLimpiar.setFont(new java.awt.Font("Montserrat Medium", 0, 12)); // NOI18N
-        btnLimpiar.setForeground(new java.awt.Color(0, 0, 0));
         btnLimpiar.setText("Limpiar");
         btnLimpiar.setBorder(null);
+        btnLimpiar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLimpiarActionPerformed(evt);
+            }
+        });
 
         jLabel5.setFont(new java.awt.Font("Montserrat ExtraBold", 0, 27)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setText("Digite los datos");
 
-        cmbPosicionInicial.setBackground(new java.awt.Color(255, 255, 255));
         cmbPosicionInicial.setFont(new java.awt.Font("Montserrat Medium", 0, 12)); // NOI18N
-        cmbPosicionInicial.setForeground(new java.awt.Color(0, 0, 0));
         cmbPosicionInicial.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "cm", "m", "km", "mi" }));
         cmbPosicionInicial.setBorder(null);
 
-        txtPosicionInicial.setBackground(new java.awt.Color(255, 255, 255));
         txtPosicionInicial.setFont(new java.awt.Font("Montserrat Medium", 0, 12)); // NOI18N
-        txtPosicionInicial.setForeground(new java.awt.Color(0, 0, 0));
         txtPosicionInicial.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 204, 204), 1, true));
 
         jLabel1.setBackground(new java.awt.Color(0, 0, 0));
         jLabel1.setFont(new java.awt.Font("Montserrat Medium", 0, 14)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Posición inicial");
 
-        cmbPosicionFinal.setBackground(new java.awt.Color(255, 255, 255));
         cmbPosicionFinal.setFont(new java.awt.Font("Montserrat Medium", 0, 12)); // NOI18N
-        cmbPosicionFinal.setForeground(new java.awt.Color(0, 0, 0));
         cmbPosicionFinal.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "cm", "m", "km", "mi" }));
         cmbPosicionFinal.setBorder(null);
 
-        txtPosicionFinal.setBackground(new java.awt.Color(255, 255, 255));
         txtPosicionFinal.setFont(new java.awt.Font("Montserrat Medium", 0, 12)); // NOI18N
-        txtPosicionFinal.setForeground(new java.awt.Color(0, 0, 0));
         txtPosicionFinal.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 204, 204), 1, true));
 
         jLabel2.setBackground(new java.awt.Color(0, 0, 0));
         jLabel2.setFont(new java.awt.Font("Montserrat Medium", 0, 14)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Posición final");
 
-        cmbTiempoInicial.setBackground(new java.awt.Color(255, 255, 255));
         cmbTiempoInicial.setFont(new java.awt.Font("Montserrat Medium", 0, 12)); // NOI18N
-        cmbTiempoInicial.setForeground(new java.awt.Color(0, 0, 0));
         cmbTiempoInicial.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "s", "min", "h" }));
         cmbTiempoInicial.setBorder(null);
 
-        txtTiempoInicial.setBackground(new java.awt.Color(255, 255, 255));
         txtTiempoInicial.setFont(new java.awt.Font("Montserrat Medium", 0, 12)); // NOI18N
-        txtTiempoInicial.setForeground(new java.awt.Color(0, 0, 0));
         txtTiempoInicial.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 204, 204), 1, true));
 
         jLabel3.setBackground(new java.awt.Color(0, 0, 0));
         jLabel3.setFont(new java.awt.Font("Montserrat Medium", 0, 14)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("Tiempo inicial");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -203,6 +200,10 @@ public class Velocidad extends javax.swing.JPanel {
                 .addGap(52, 52, 52))
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed
+        limpiarCampos();
+    }//GEN-LAST:event_btnLimpiarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
