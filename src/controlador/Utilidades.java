@@ -6,6 +6,7 @@ import javax.swing.JTextField;
 
 public class Utilidades {
 
+    /* Método para limpiar todos los jTextField en un panel */
     public void limpiarCampos(Container container) {
         Component[] components = container.getComponents();
         for (Component component : components) {
