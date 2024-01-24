@@ -6,6 +6,8 @@ package vista.mru;
 
 import java.awt.Component;
 import java.awt.Container;
+import java.util.ArrayList;
+import javax.swing.JComboBox;
 import javax.swing.JTextField;
 
 /**
@@ -17,8 +19,13 @@ public class Velocidad extends javax.swing.JPanel {
     /**
      * Creates new form Velocidad
      */
+      private ArrayList<JComboBox<String>> comboBoxes = new ArrayList<>();
     public Velocidad() {
         initComponents();
+        comboBoxes.add(cmbPosicionInicial);
+        comboBoxes.add(cmbPosicionFinal);
+        comboBoxes.add(cmbTiempoInicial);
+        comboBoxes.add(cmbTiempoFinal);
     }
     private void limpiarCampos(){
         
@@ -29,6 +36,9 @@ public class Velocidad extends javax.swing.JPanel {
                 JTextField textField = (JTextField)component;
                 textField.setText("");
             }
+        }
+        for (JComboBox<String> comboBox : comboBoxes) {
+            comboBox.setSelectedIndex(0);
         }
     }
 
