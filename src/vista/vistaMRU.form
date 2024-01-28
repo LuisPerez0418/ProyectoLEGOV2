@@ -60,9 +60,9 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="buttonTiempo" min="-2" pref="110" max="-2" attributes="0"/>
-                      <Component id="buttonDistancia" min="-2" pref="110" max="-2" attributes="0"/>
-                      <Component id="buttonVelocidad" min="-2" pref="110" max="-2" attributes="0"/>
+                      <Component id="btnTiempo" min="-2" pref="110" max="-2" attributes="0"/>
+                      <Component id="btnDistancia" min="-2" pref="110" max="-2" attributes="0"/>
+                      <Component id="btnVelocidad" min="-2" pref="110" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="19" max="32767" attributes="0"/>
               </Group>
@@ -72,39 +72,39 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-                  <Component id="buttonVelocidad" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnVelocidad" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="buttonDistancia" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnDistancia" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="buttonTiempo" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnTiempo" min="-2" max="-2" attributes="0"/>
                   <EmptySpace pref="336" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JButton" name="buttonVelocidad">
+        <Component class="javax.swing.JButton" name="btnVelocidad">
           <Properties>
             <Property name="text" type="java.lang.String" value="Velocidad"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonVelocidadActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnVelocidadActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="buttonDistancia">
+        <Component class="javax.swing.JButton" name="btnDistancia">
           <Properties>
             <Property name="text" type="java.lang.String" value="Distancia"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonDistanciaActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnDistanciaActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="buttonTiempo">
+        <Component class="javax.swing.JButton" name="btnTiempo">
           <Properties>
             <Property name="text" type="java.lang.String" value="Tiempo"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonTiempoActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnTiempoActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>
