@@ -1,11 +1,11 @@
 package vista.mru;
 
+import controlador.ControladorMovRecUni;
 import controlador.Utilidades;
 import javax.swing.JOptionPane;
 import modelo.ModeloMovRecUni;
-import modelo.convertidor.ModeloLongitud;
-import modelo.convertidor.ModeloTiempo;
-import modelo.convertidor.ModeloVelocidad;
+import controlador.convertidor.ControladorLongitud;
+import controlador.convertidor.ControladorVelocidad;
 
 public class Tiempo extends javax.swing.JPanel {
 
@@ -14,11 +14,11 @@ public class Tiempo extends javax.swing.JPanel {
     }
 
     private modelo.ModeloMovRecUni mru = new ModeloMovRecUni();
-    ModeloVelocidad mv = new ModeloVelocidad();
-    ModeloTiempo mt = new ModeloTiempo();
-    ModeloLongitud ml = new ModeloLongitud();
-    Utilidades util = new Utilidades();
-    
+    private controlador.ControladorMovRecUni mruc = new ControladorMovRecUni();
+    private ControladorVelocidad mv = new ControladorVelocidad();
+    private ControladorLongitud ml = new ControladorLongitud();
+    private Utilidades util = new Utilidades();
+
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
@@ -51,6 +51,7 @@ public class Tiempo extends javax.swing.JPanel {
         txtPosicionInicial.setBackground(new java.awt.Color(255, 255, 255));
         txtPosicionInicial.setFont(new java.awt.Font("Montserrat Medium", 0, 12)); // NOI18N
         txtPosicionInicial.setForeground(new java.awt.Color(0, 0, 0));
+        txtPosicionInicial.setText("0");
         txtPosicionInicial.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 204, 204), 1, true));
 
         jLabel1.setBackground(new java.awt.Color(0, 0, 0));
@@ -192,18 +193,21 @@ public class Tiempo extends javax.swing.JPanel {
                     cmbPosicionFinal.getSelectedItem().toString());
             velocidad = mv.convertirVelocidad(Double.parseDouble(txtVelocidad.getText()),
                     cmbVelocidad.getSelectedItem().toString());
-            mru = new ModeloMovRecUni(0, 0, velocidad, posInicial, posFinal);
-            //------ Mostrar cálculos -----//
+            mruc = new ControladorMovRecUni(0, 0, velocidad, posInicial, posFinal);
+            /**
+             * Mostrar cálculos *
+             */
             JOptionPane.showMessageDialog(this,
-                    "Distancia calculada. \n" + mru.calcularPosicion()+ "m");
+                    "Distancia calculada. \n" + mruc.calcularPosicion() + "m");
         } catch (Exception e) {
-            JOptionPane.showConfirmDialog(this,
-                    "Debe rellenar todos los campos para continuar.");
+            JOptionPane.showMessageDialog(null, "Debe rellenar todos "
+                    + "los campos para continuar..", "Error", 0);
         }
     }//GEN-LAST:event_btnCalcularActionPerformed
 
     private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed
         util.limpiarCampos(this);
+        Utilidades.aCero(txtPosicionInicial);
     }//GEN-LAST:event_btnLimpiarActionPerformed
 
 

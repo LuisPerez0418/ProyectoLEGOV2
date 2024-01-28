@@ -1,25 +1,23 @@
 package vista.mru;
 
+import controlador.ControladorMovRecUni;
 import controlador.Utilidades;
 import javax.swing.JOptionPane;
 import modelo.ModeloMovRecUni;
-import modelo.convertidor.ModeloLongitud;
-import modelo.convertidor.ModeloTiempo;
-import modelo.convertidor.ModeloVelocidad;
-
+import controlador.convertidor.ControladorLongitud;
+import controlador.convertidor.ControladorTiempo;
 
 public class Velocidad extends javax.swing.JPanel {
 
     public Velocidad() {
         initComponents();
-
     }
-    
+
     private modelo.ModeloMovRecUni mru = new ModeloMovRecUni();
-    ModeloVelocidad mv = new ModeloVelocidad();
-    ModeloTiempo mt = new ModeloTiempo();
-    ModeloLongitud ml = new ModeloLongitud();
-    Utilidades util = new Utilidades();
+    private controlador.ControladorMovRecUni mruc = new ControladorMovRecUni();
+    private ControladorTiempo mt = new ControladorTiempo();
+    private ControladorLongitud ml = new ControladorLongitud();
+    private Utilidades util = new Utilidades();
 
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -42,19 +40,25 @@ public class Velocidad extends javax.swing.JPanel {
 
         setBackground(new java.awt.Color(255, 255, 255));
 
+        cmbTiempoFinal.setBackground(new java.awt.Color(255, 255, 255));
         cmbTiempoFinal.setFont(new java.awt.Font("Montserrat Medium", 0, 12)); // NOI18N
+        cmbTiempoFinal.setForeground(new java.awt.Color(0, 0, 0));
         cmbTiempoFinal.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "s", "min", "h" }));
         cmbTiempoFinal.setBorder(null);
 
+        txtTiempoFinal.setBackground(new java.awt.Color(255, 255, 255));
         txtTiempoFinal.setFont(new java.awt.Font("Montserrat Medium", 0, 12)); // NOI18N
+        txtTiempoFinal.setForeground(new java.awt.Color(0, 0, 0));
         txtTiempoFinal.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 204, 204), 1, true));
 
-        jLabel4.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel4.setBackground(new java.awt.Color(255, 255, 255));
         jLabel4.setFont(new java.awt.Font("Montserrat Medium", 0, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("Tiempo Final");
 
         btnCalcular.setBackground(new java.awt.Color(204, 204, 204));
         btnCalcular.setFont(new java.awt.Font("Montserrat Medium", 0, 12)); // NOI18N
+        btnCalcular.setForeground(new java.awt.Color(0, 0, 0));
         btnCalcular.setText("Calcular");
         btnCalcular.setBorder(null);
         btnCalcular.addActionListener(new java.awt.event.ActionListener() {
@@ -65,6 +69,7 @@ public class Velocidad extends javax.swing.JPanel {
 
         btnLimpiar.setBackground(new java.awt.Color(204, 204, 204));
         btnLimpiar.setFont(new java.awt.Font("Montserrat Medium", 0, 12)); // NOI18N
+        btnLimpiar.setForeground(new java.awt.Color(0, 0, 0));
         btnLimpiar.setText("Limpiar");
         btnLimpiar.setBorder(null);
         btnLimpiar.addActionListener(new java.awt.event.ActionListener() {
@@ -73,41 +78,60 @@ public class Velocidad extends javax.swing.JPanel {
             }
         });
 
+        jLabel5.setBackground(new java.awt.Color(255, 255, 255));
         jLabel5.setFont(new java.awt.Font("Montserrat ExtraBold", 0, 27)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setText("Digite los datos");
 
+        cmbPosicionInicial.setBackground(new java.awt.Color(255, 255, 255));
         cmbPosicionInicial.setFont(new java.awt.Font("Montserrat Medium", 0, 12)); // NOI18N
+        cmbPosicionInicial.setForeground(new java.awt.Color(0, 0, 0));
         cmbPosicionInicial.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "cm", "m", "km", "mi" }));
         cmbPosicionInicial.setBorder(null);
 
+        txtPosicionInicial.setBackground(new java.awt.Color(255, 255, 255));
         txtPosicionInicial.setFont(new java.awt.Font("Montserrat Medium", 0, 12)); // NOI18N
+        txtPosicionInicial.setForeground(new java.awt.Color(0, 0, 0));
+        txtPosicionInicial.setText("0");
         txtPosicionInicial.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 204, 204), 1, true));
 
-        jLabel1.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
         jLabel1.setFont(new java.awt.Font("Montserrat Medium", 0, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Posición inicial");
 
+        cmbPosicionFinal.setBackground(new java.awt.Color(255, 255, 255));
         cmbPosicionFinal.setFont(new java.awt.Font("Montserrat Medium", 0, 12)); // NOI18N
+        cmbPosicionFinal.setForeground(new java.awt.Color(0, 0, 0));
         cmbPosicionFinal.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "cm", "m", "km", "mi" }));
         cmbPosicionFinal.setBorder(null);
 
+        txtPosicionFinal.setBackground(new java.awt.Color(255, 255, 255));
         txtPosicionFinal.setFont(new java.awt.Font("Montserrat Medium", 0, 12)); // NOI18N
+        txtPosicionFinal.setForeground(new java.awt.Color(0, 0, 0));
         txtPosicionFinal.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 204, 204), 1, true));
 
-        jLabel2.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel2.setBackground(new java.awt.Color(255, 255, 255));
         jLabel2.setFont(new java.awt.Font("Montserrat Medium", 0, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Posición final");
 
+        cmbTiempoInicial.setBackground(new java.awt.Color(255, 255, 255));
         cmbTiempoInicial.setFont(new java.awt.Font("Montserrat Medium", 0, 12)); // NOI18N
+        cmbTiempoInicial.setForeground(new java.awt.Color(0, 0, 0));
         cmbTiempoInicial.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "s", "min", "h" }));
         cmbTiempoInicial.setBorder(null);
 
+        txtTiempoInicial.setBackground(new java.awt.Color(255, 255, 255));
         txtTiempoInicial.setFont(new java.awt.Font("Montserrat Medium", 0, 12)); // NOI18N
+        txtTiempoInicial.setForeground(new java.awt.Color(0, 0, 0));
+        txtTiempoInicial.setText("0");
         txtTiempoInicial.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 204, 204), 1, true));
 
-        jLabel3.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel3.setBackground(new java.awt.Color(255, 255, 255));
         jLabel3.setFont(new java.awt.Font("Montserrat Medium", 0, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("Tiempo inicial");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -191,6 +215,8 @@ public class Velocidad extends javax.swing.JPanel {
 
     private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed
         util.limpiarCampos(this);
+        Utilidades.aCero(txtTiempoInicial);
+        Utilidades.aCero(txtPosicionInicial);
     }//GEN-LAST:event_btnLimpiarActionPerformed
 
     private void btnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularActionPerformed
@@ -207,13 +233,15 @@ public class Velocidad extends javax.swing.JPanel {
                     cmbPosicionInicial.getSelectedItem().toString());
             posFinal = ml.convertirLongitud(Double.parseDouble(txtPosicionFinal.getText()),
                     cmbPosicionFinal.getSelectedItem().toString());
-            mru = new ModeloMovRecUni(tiempoInicial, tiempoFinal, 0, posInicial, posFinal);
-            //------ Mostrar cálculos -----//
+            mruc = new ControladorMovRecUni(tiempoInicial, tiempoFinal, 0, posInicial, posFinal);
+            /**
+             * Mostrar cálculos *
+             */
             JOptionPane.showMessageDialog(this,
-                    "Velocidad calculada. \n" + mru.calcularVelocidad() + "m/s");
+                    "Velocidad calculada. \n" + mruc.calcularVelocidad() + " m/s");
         } catch (Exception e) {
-            JOptionPane.showConfirmDialog(this,
-                    "Debe rellenar todos los campos para continuar.");
+            JOptionPane.showMessageDialog(null, "Debe rellenar todos "
+                    + "los campos para continuar..", "Error", 0);
         }
     }//GEN-LAST:event_btnCalcularActionPerformed
 

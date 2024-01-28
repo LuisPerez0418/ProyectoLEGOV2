@@ -1,5 +1,7 @@
 package modelo;
 
+import javax.swing.JOptionPane;
+
 public class ModeloMovRecUni {
 
     private double posInicial;
@@ -8,20 +10,6 @@ public class ModeloMovRecUni {
     private double tiempoFinal;
     private double velocidad;
 
-    public ModeloMovRecUni() {
-
-    }
-
-    public ModeloMovRecUni(double tiempoInicial, double tiempoFinal, double velocidad,
-            double posInicial, double posFinal) {
-        setTiempoInicial(tiempoInicial);
-        setTiempoFinal(tiempoFinal);
-        setPosInicial(posInicial);
-        setPosFinal(posFinal);
-        setVelocidad(velocidad);
-    }
-
-    //----- Métodos getters y setters -----//
     public double getPosInicial() {
         return posInicial;
     }
@@ -51,7 +39,12 @@ public class ModeloMovRecUni {
     }
 
     public void setTiempoFinal(double tiempoFinal) {
-        this.tiempoFinal = tiempoFinal;
+        if (tiempoFinal > this.getTiempoInicial()) {
+            this.tiempoFinal = tiempoFinal;
+        } else {
+            JOptionPane.showMessageDialog(null, "El tiempo final no "
+                    + "puede ser menor que el tiempo inicial.", "Error", 0);
+        }
     }
 
     public double getVelocidad() {
@@ -60,19 +53,6 @@ public class ModeloMovRecUni {
 
     public void setVelocidad(double velocidad) {
         this.velocidad = velocidad;
-    }
-
-    //----- Métodos para calcular ------//
-    public double calcularVelocidad() {
-        return (getPosFinal() - getPosInicial()) / (getTiempoFinal() - getTiempoInicial());
-    }
-
-    public double calcularPosicion() {
-        return getPosInicial() + getVelocidad() * (getTiempoFinal() - getTiempoInicial());
-    }
-
-    public double calcularTiempo() {
-        return (getPosFinal() - getPosInicial()) / getVelocidad();
     }
 
 }

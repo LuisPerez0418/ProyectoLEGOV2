@@ -1,12 +1,13 @@
 package modelo;
 
+import javax.swing.JOptionPane;
+
 public class ModeloMovRecUniAce {
 
     private double posInicial;
     private double posFinal;
     private double tiempoInicial;
     private double tiempoFinal;
-    private double tiempo;
     private double velocidadInicial;
     private double velocidadFinal;
     private double aceleracion;
@@ -56,15 +57,12 @@ public class ModeloMovRecUniAce {
     }
 
     public void setTiempoFinal(double tiempoFinal) {
-        this.tiempoFinal = tiempoFinal;
-    }
-
-    public double getTiempo() {
-        return tiempo;
-    }
-
-    public void setTiempo(double tiempo) {
-        this.tiempo = tiempo;
+        if (tiempoFinal > this.tiempoInicial) {
+            this.tiempoFinal = tiempoFinal;
+        } else {
+            JOptionPane.showMessageDialog(null, "El tiempo final no "
+                    + "puede ser menor que el tiempo inicial.", "Error", 0);
+        } 
     }
 
     public double getVelocidadInicial() {
@@ -91,25 +89,4 @@ public class ModeloMovRecUniAce {
         this.aceleracion = aceleracion;
     }
 
-    //----- Métodos para calcular ------//
-    public double calcularVelocidadInicial() {
-        return (getPosFinal() - getPosInicial()) / (getTiempo());
-    }
-
-    public double calcularVelocidadFinal() {
-        return (getVelocidadInicial() + (getAceleracion() * getTiempo()));
-    }
-
-    public double calcularDistancia() {
-        return ((getVelocidadFinal() + getVelocidadInicial()) / 2) * getTiempo();
-    }
-
-    public double calcularTiempo() {
-        return (getVelocidadFinal() - getVelocidadInicial()) / getAceleracion();
-    }
-
-    public double calcularAceleracion() {
-        return ((getVelocidadFinal() - getVelocidadInicial()) / (getTiempo()));
-    }
-
-}
+} 

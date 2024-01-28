@@ -1,23 +1,25 @@
 package vista.mru;
 
+import controlador.ControladorMovRecUni;
 import controlador.Utilidades;
 import javax.swing.JOptionPane;
 import modelo.ModeloMovRecUni;
-import modelo.convertidor.ModeloLongitud;
-import modelo.convertidor.ModeloTiempo;
-import modelo.convertidor.ModeloVelocidad;
+import controlador.convertidor.ControladorLongitud;
+import controlador.convertidor.ControladorTiempo;
+import controlador.convertidor.ControladorVelocidad;
 
 public class Distancia extends javax.swing.JPanel {
 
     public Distancia() {
         initComponents();
     }
-    
+
     private modelo.ModeloMovRecUni mru = new ModeloMovRecUni();
-    ModeloVelocidad mv = new ModeloVelocidad();
-    ModeloTiempo mt = new ModeloTiempo();
-    ModeloLongitud ml = new ModeloLongitud();
-    Utilidades util = new Utilidades();
+    private controlador.ControladorMovRecUni mruc = new ControladorMovRecUni();
+    private ControladorVelocidad mv = new ControladorVelocidad();
+    private ControladorTiempo mt = new ControladorTiempo();
+    private ControladorLongitud ml = new ControladorLongitud();
+    private Utilidades util = new Utilidades();
 
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -108,6 +110,7 @@ public class Distancia extends javax.swing.JPanel {
         txtPosicionInicial.setBackground(new java.awt.Color(255, 255, 255));
         txtPosicionInicial.setFont(new java.awt.Font("Montserrat Medium", 0, 12)); // NOI18N
         txtPosicionInicial.setForeground(new java.awt.Color(0, 0, 0));
+        txtPosicionInicial.setText("0");
         txtPosicionInicial.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 204, 204), 1, true));
         add(txtPosicionInicial, new org.netbeans.lib.awtextra.AbsoluteConstraints(43, 132, 195, 32));
 
@@ -146,6 +149,7 @@ public class Distancia extends javax.swing.JPanel {
         txtTiempoInicial.setBackground(new java.awt.Color(255, 255, 255));
         txtTiempoInicial.setFont(new java.awt.Font("Montserrat Medium", 0, 12)); // NOI18N
         txtTiempoInicial.setForeground(new java.awt.Color(0, 0, 0));
+        txtTiempoInicial.setText("0");
         txtTiempoInicial.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 204, 204), 1, true));
         add(txtTiempoInicial, new org.netbeans.lib.awtextra.AbsoluteConstraints(43, 268, 195, 32));
 
@@ -200,26 +204,29 @@ public class Distancia extends javax.swing.JPanel {
                     cmbPosicionInicial.getSelectedItem().toString());
             velocidad = mv.convertirVelocidad(Double.parseDouble(txtVelocidad.getText()),
                     cmbVelocidad.getSelectedItem().toString());
-            mru = new ModeloMovRecUni(tiempoInicial, tiempoFinal, velocidad, posInicial, 0);
-            //------ Mostrar cálculos -----//
+            mruc = new ControladorMovRecUni(tiempoInicial, tiempoFinal, velocidad, posInicial, 0);
+            /**
+             * Mostrar cálculos *
+             */
             labelRemplazo.setText("X = " + velocidad + " m/s * (" + tiempoFinal
                     + " s - " + tiempoInicial + " s) + " + posInicial + " m");
             labelRemplazo.setText("X = " + velocidad + " m/s * (" + tiempoFinal
                     + " s - " + tiempoInicial + " s) + " + posInicial + " m");
             labelResta.setText("X = " + velocidad + " m/s * "
-                    + (tiempoFinal - tiempoInicial)+ " + " + posInicial + " m");
-            labelRespuesta.setText("X= " + mru.calcularPosicion() + " m");
+                    + (tiempoFinal - tiempoInicial) + " + " + posInicial + " m");
+            labelRespuesta.setText("X= " + mruc.calcularPosicion() + " m");
             JOptionPane.showMessageDialog(this,
-                    "Distancia calculada. \n" + mru.calcularPosicion() + "m");
-            
+                    "Distancia calculada. \n" + mruc.calcularPosicion() + "m");
         } catch (Exception e) {
-            JOptionPane.showConfirmDialog(this,
-                    "Debe rellenar todos los campos para continuar.");
+            JOptionPane.showMessageDialog(null, "Debe rellenar todos "
+                    + "los campos para continuar..", "Error", 0);
         }
     }//GEN-LAST:event_btnCalcularActionPerformed
 
     private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed
         util.limpiarCampos(this);
+        Utilidades.aCero(txtTiempoInicial);
+        Utilidades.aCero(txtPosicionInicial);
     }//GEN-LAST:event_btnLimpiarActionPerformed
 
 

@@ -1,11 +1,13 @@
 package vista.mrua;
 
 import controlador.Utilidades;
+import controlador.ControladorMovRecUniAce;
+import controlador.convertidor.ControladorLongitud;
+import controlador.convertidor.ControladorTiempo;
+import controlador.convertidor.ControladorVelocidad;
 import javax.swing.JOptionPane;
-import modelo.ModeloMovRecUni;
-import modelo.convertidor.ModeloLongitud;
-import modelo.convertidor.ModeloTiempo;
-import modelo.convertidor.ModeloVelocidad;
+import modelo.ModeloMovRecUniAce;
+
 
 public class Distancia extends javax.swing.JPanel {
 
@@ -13,11 +15,12 @@ public class Distancia extends javax.swing.JPanel {
         initComponents();
     }
     
-    private modelo.ModeloMovRecUni mru = new ModeloMovRecUni();
-    ModeloVelocidad mv = new ModeloVelocidad();
-    ModeloTiempo mt = new ModeloTiempo();
-    ModeloLongitud ml = new ModeloLongitud();
-    Utilidades util = new Utilidades();
+    private modelo.ModeloMovRecUniAce mrua = new ModeloMovRecUniAce();
+    private controlador.ControladorMovRecUniAce mruac = new ControladorMovRecUniAce();  
+    private ControladorVelocidad mv = new ControladorVelocidad();
+    private ControladorTiempo mt = new ControladorTiempo();
+    private ControladorLongitud ml = new ControladorLongitud();
+    private Utilidades util = new Utilidades();
 
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -31,8 +34,8 @@ public class Distancia extends javax.swing.JPanel {
         cmbPosicionInicial = new javax.swing.JComboBox<>();
         txtPosicionInicial = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
-        cmbVelocidad = new javax.swing.JComboBox<>();
-        txtVelocidad = new javax.swing.JTextField();
+        cmbVelocidadInicial = new javax.swing.JComboBox<>();
+        txtVelocidadInicial = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         cmbTiempoInicial = new javax.swing.JComboBox<>();
         txtTiempoInicial = new javax.swing.JTextField();
@@ -117,18 +120,18 @@ public class Distancia extends javax.swing.JPanel {
         jLabel1.setText("Posición inicial");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, -1, -1));
 
-        cmbVelocidad.setBackground(new java.awt.Color(255, 255, 255));
-        cmbVelocidad.setFont(new java.awt.Font("Montserrat Medium", 0, 12)); // NOI18N
-        cmbVelocidad.setForeground(new java.awt.Color(0, 0, 0));
-        cmbVelocidad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "m/s", "km/h", "mi/h" }));
-        cmbVelocidad.setBorder(null);
-        add(cmbVelocidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 170, 73, 32));
+        cmbVelocidadInicial.setBackground(new java.awt.Color(255, 255, 255));
+        cmbVelocidadInicial.setFont(new java.awt.Font("Montserrat Medium", 0, 12)); // NOI18N
+        cmbVelocidadInicial.setForeground(new java.awt.Color(0, 0, 0));
+        cmbVelocidadInicial.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "m/s", "km/h", "mi/h" }));
+        cmbVelocidadInicial.setBorder(null);
+        add(cmbVelocidadInicial, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 170, 73, 32));
 
-        txtVelocidad.setBackground(new java.awt.Color(255, 255, 255));
-        txtVelocidad.setFont(new java.awt.Font("Montserrat Medium", 0, 12)); // NOI18N
-        txtVelocidad.setForeground(new java.awt.Color(0, 0, 0));
-        txtVelocidad.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 204, 204), 1, true));
-        add(txtVelocidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 170, 195, 32));
+        txtVelocidadInicial.setBackground(new java.awt.Color(255, 255, 255));
+        txtVelocidadInicial.setFont(new java.awt.Font("Montserrat Medium", 0, 12)); // NOI18N
+        txtVelocidadInicial.setForeground(new java.awt.Color(0, 0, 0));
+        txtVelocidadInicial.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 204, 204), 1, true));
+        add(txtVelocidadInicial, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 170, 195, 32));
 
         jLabel2.setBackground(new java.awt.Color(0, 0, 0));
         jLabel2.setFont(new java.awt.Font("Montserrat Medium", 0, 14)); // NOI18N
@@ -189,9 +192,10 @@ public class Distancia extends javax.swing.JPanel {
 
     private void btnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularActionPerformed
         double posInicial;
-        double velocidad;
+        double velocidadInicial;
         double tiempoFinal;
         double tiempoInicial;
+        double aceleracion;
         try {
             tiempoInicial = mt.convertirTiempo(Double.parseDouble(txtTiempoInicial.getText()),
                     cmbTiempoInicial.getSelectedItem().toString());
@@ -199,15 +203,16 @@ public class Distancia extends javax.swing.JPanel {
                     cmbTiempoFinal.getSelectedItem().toString());
             posInicial = ml.convertirLongitud(Double.parseDouble(txtPosicionInicial.getText()),
                     cmbPosicionInicial.getSelectedItem().toString());
-            velocidad = mv.convertirVelocidad(Double.parseDouble(txtVelocidad.getText()),
-                    cmbVelocidad.getSelectedItem().toString());
-            mru = new ModeloMovRecUni(tiempoInicial, tiempoFinal, velocidad, posInicial, 0);
+            velocidadInicial = mv.convertirVelocidad(Double.parseDouble(txtVelocidadInicial.getText()),
+                    cmbVelocidadInicial.getSelectedItem().toString());
+            aceleracion = Double.parseDouble(txtAceleracion.getText());
+            mrua = new ModeloMovRecUniAce(tiempoInicial, tiempoFinal, posInicial, posInicial, aceleracion, velocidadInicial, 0);
             //------ Mostrar cálculos -----//
             JOptionPane.showMessageDialog(this,
-                    "Distancia calculada. \n" + mru.calcularPosicion() + "m");
+                    "Distancia calculada. \n" + mruac.calcularDistanciaBase()+ "m");
             
         } catch (Exception e) {
-            JOptionPane.showConfirmDialog(this,
+            JOptionPane.showMessageDialog(this,
                     "Debe rellenar todos los campos para continuar.");
         }
     }//GEN-LAST:event_btnCalcularActionPerformed
@@ -224,7 +229,7 @@ public class Distancia extends javax.swing.JPanel {
     private javax.swing.JComboBox<String> cmbPosicionInicial;
     private javax.swing.JComboBox<String> cmbTiempoFinal;
     private javax.swing.JComboBox<String> cmbTiempoInicial;
-    private javax.swing.JComboBox<String> cmbVelocidad;
+    private javax.swing.JComboBox<String> cmbVelocidadInicial;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -237,6 +242,6 @@ public class Distancia extends javax.swing.JPanel {
     private javax.swing.JTextField txtPosicionInicial;
     private javax.swing.JTextField txtTiempoFinal;
     private javax.swing.JTextField txtTiempoInicial;
-    private javax.swing.JTextField txtVelocidad;
+    private javax.swing.JTextField txtVelocidadInicial;
     // End of variables declaration//GEN-END:variables
 }

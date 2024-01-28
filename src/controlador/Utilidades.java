@@ -16,5 +16,11 @@ public class Utilidades {
             }
         }
     }
-
+    
+    /* Método para que los campos vacíos se conviertan en "0" */
+    public static void aCero(JTextField campo) {
+        if (campo.getText().isEmpty()) {
+            campo.setText("0");
+        }
+    }
 }
