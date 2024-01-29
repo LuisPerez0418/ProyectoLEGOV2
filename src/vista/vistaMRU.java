@@ -140,7 +140,7 @@ public class vistaMRU extends javax.swing.JPanel {
         labelCuadro.setFont(new java.awt.Font("Montserrat Medium", 0, 15)); // NOI18N
         labelCuadro.setForeground(new java.awt.Color(0, 0, 0));
         labelCuadro.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        labelCuadro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/utiliarios/menuBase.png"))); // NOI18N
+        labelCuadro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/utiliarios/menuMRU.png"))); // NOI18N
         labelCuadro.setMaximumSize(new java.awt.Dimension(135, 40));
         labelCuadro.setMinimumSize(new java.awt.Dimension(135, 40));
         labelCuadro.setPreferredSize(new java.awt.Dimension(135, 40));

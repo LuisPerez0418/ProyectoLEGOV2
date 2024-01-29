@@ -42,7 +42,7 @@ public class ModeloMovHorizontal {
     }
 
     public void setTiempoFinal(double tiempoFinal) {
-        if (tiempoFinal > this.getTiempoInicial()) {
+        if (tiempoFinal >= this.getTiempoInicial()) {
             this.tiempoFinal = tiempoFinal;
         } else {
             JOptionPane.showMessageDialog(null, "El tiempo final no "
