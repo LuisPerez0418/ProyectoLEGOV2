@@ -3,7 +3,7 @@ package vista.mru;
 import controlador.ControladorMovRecUni;
 import controlador.Utilidades;
 import javax.swing.JOptionPane;
-import modelo.ModeloMovRecUni;
+import modelo.ModeloMovHorizontal;
 import controlador.convertidor.ControladorLongitud;
 import controlador.convertidor.ControladorVelocidad;
 
@@ -13,7 +13,7 @@ public class Tiempo extends javax.swing.JPanel {
         initComponents();
     }
 
-    private modelo.ModeloMovRecUni mru = new ModeloMovRecUni();
+    private modelo.ModeloMovHorizontal mru = new ModeloMovHorizontal();
     private controlador.ControladorMovRecUni mruc = new ControladorMovRecUni();
     private ControladorVelocidad mv = new ControladorVelocidad();
     private ControladorLongitud ml = new ControladorLongitud();

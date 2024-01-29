@@ -1,6 +1,6 @@
 package controlador;
 
-public class ControladorMovRecUni extends modelo.ModeloMovRecUni {
+public class ControladorMovRecUni extends modelo.ModeloMovHorizontal {
 
     public ControladorMovRecUni() {
 

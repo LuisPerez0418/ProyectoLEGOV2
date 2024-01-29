@@ -2,13 +2,16 @@ package modelo;
 
 import javax.swing.JOptionPane;
 
-public class ModeloMovRecUni {
+public class ModeloMovHorizontal {
 
     private double posInicial;
     private double posFinal;
     private double tiempoInicial;
     private double tiempoFinal;
     private double velocidad;
+    private double velocidadInicial;
+    private double velocidadFinal;
+    private double aceleracion;
 
     public double getPosInicial() {
         return posInicial;
@@ -53,6 +56,30 @@ public class ModeloMovRecUni {
 
     public void setVelocidad(double velocidad) {
         this.velocidad = velocidad;
+    }
+
+    public double getVelocidadInicial() {
+        return velocidadInicial;
+    }
+
+    public void setVelocidadInicial(double velocidadInicial) {
+        this.velocidadInicial = velocidadInicial;
+    }
+
+    public double getVelocidadFinal() {
+        return velocidadFinal;
+    }
+
+    public void setVelocidadFinal(double velocidadFinal) {
+        this.velocidadFinal = velocidadFinal;
+    }
+
+    public double getAceleracion() {
+        return aceleracion;
+    }
+
+    public void setAceleracion(double aceleracion) {
+        this.aceleracion = aceleracion;
     }
 
 }

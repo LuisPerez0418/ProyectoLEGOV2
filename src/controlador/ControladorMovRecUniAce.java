@@ -1,6 +1,18 @@
 package controlador;
 
-public class ControladorMovRecUniAce extends modelo.ModeloMovRecUniAce {
+public class ControladorMovRecUniAce extends modelo.ModeloMovHorizontal {
+    
+    public ControladorMovRecUniAce(double tiempoInicial, double tiempoFinal,
+            double posInicial, double posFinal, double aceleracion,
+            double velocidadInicial, double velocidadFinal) {
+        setTiempoInicial(tiempoInicial);
+        setTiempoFinal(tiempoFinal);
+        setPosInicial(posInicial);
+        setPosFinal(posFinal);
+        setAceleracion(aceleracion);
+        setVelocidadInicial(velocidadInicial);
+        setVelocidadFinal(velocidadFinal);
+    }
     
     private double getTiempo(){
         return (getTiempoFinal() - getTiempoInicial());

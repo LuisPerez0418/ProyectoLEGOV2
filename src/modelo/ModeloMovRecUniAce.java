@@ -15,18 +15,6 @@ public class ModeloMovRecUniAce {
     public ModeloMovRecUniAce() {
     }
 
-    public ModeloMovRecUniAce(double tiempoInicial, double tiempoFinal,
-            double posInicial, double posFinal, double aceleracion,
-            double velocidadInicial, double velocidadFinal) {
-        setTiempoInicial(tiempoInicial);
-        setTiempoFinal(tiempoFinal);
-        setPosInicial(posInicial);
-        setPosFinal(posFinal);
-        setAceleracion(aceleracion);
-        setVelocidadInicial(velocidadInicial);
-        setVelocidadFinal(velocidadFinal);
-    }
-
     //----- Métodos getters y setters -----//
     public double getPosInicial() {
         return posInicial;
