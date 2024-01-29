@@ -3,7 +3,6 @@ package vista.mru;
 import controlador.ControladorMovRecUni;
 import controlador.Utilidades;
 import javax.swing.JOptionPane;
-import modelo.ModeloMovHorizontal;
 import controlador.convertidor.ControladorLongitud;
 import controlador.convertidor.ControladorTiempo;
 import controlador.convertidor.ControladorVelocidad;
@@ -14,8 +13,7 @@ public class Distancia extends javax.swing.JPanel {
         initComponents();
     }
 
-    private modelo.ModeloMovHorizontal mru = new ModeloMovHorizontal();
-    private controlador.ControladorMovRecUni mruc = new ControladorMovRecUni();
+    private controlador.ControladorMovRecUni mru = new ControladorMovRecUni();
     private ControladorVelocidad mv = new ControladorVelocidad();
     private ControladorTiempo mt = new ControladorTiempo();
     private ControladorLongitud ml = new ControladorLongitud();
@@ -51,22 +49,28 @@ public class Distancia extends javax.swing.JPanel {
         setPreferredSize(new java.awt.Dimension(720, 470));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        cmbTiempoFinal.setBackground(null);
         cmbTiempoFinal.setFont(new java.awt.Font("Montserrat Medium", 0, 12)); // NOI18N
+        cmbTiempoFinal.setForeground(new java.awt.Color(0, 0, 0));
         cmbTiempoFinal.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "s", "min", "h" }));
         cmbTiempoFinal.setBorder(null);
         add(cmbTiempoFinal, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 336, 73, 32));
 
+        txtTiempoFinal.setBackground(null);
         txtTiempoFinal.setFont(new java.awt.Font("Montserrat Medium", 0, 12)); // NOI18N
+        txtTiempoFinal.setForeground(new java.awt.Color(0, 0, 0));
         txtTiempoFinal.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 204, 204), 1, true));
         add(txtTiempoFinal, new org.netbeans.lib.awtextra.AbsoluteConstraints(43, 336, 195, 32));
 
-        jLabel4.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel4.setBackground(null);
         jLabel4.setFont(new java.awt.Font("Montserrat Medium", 0, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("Tiempo Final");
         add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(43, 312, -1, -1));
 
         btnCalcular.setBackground(new java.awt.Color(204, 204, 204));
         btnCalcular.setFont(new java.awt.Font("Montserrat Medium", 0, 12)); // NOI18N
+        btnCalcular.setForeground(new java.awt.Color(0, 0, 0));
         btnCalcular.setText("Calcular");
         btnCalcular.setBorder(null);
         btnCalcular.addActionListener(new java.awt.event.ActionListener() {
@@ -78,6 +82,7 @@ public class Distancia extends javax.swing.JPanel {
 
         btnLimpiar.setBackground(new java.awt.Color(204, 204, 204));
         btnLimpiar.setFont(new java.awt.Font("Montserrat Medium", 0, 12)); // NOI18N
+        btnLimpiar.setForeground(new java.awt.Color(0, 0, 0));
         btnLimpiar.setText("Limpiar");
         btnLimpiar.setBorder(null);
         btnLimpiar.addActionListener(new java.awt.event.ActionListener() {
@@ -87,17 +92,23 @@ public class Distancia extends javax.swing.JPanel {
         });
         add(btnLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 386, 73, 32));
 
+        jLabel5.setBackground(null);
         jLabel5.setFont(new java.awt.Font("Montserrat ExtraBold", 0, 27)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setText("Digite los datos");
         add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(43, 38, -1, -1));
 
+        cmbPosicionInicial.setBackground(null);
         cmbPosicionInicial.setFont(new java.awt.Font("Montserrat Medium", 0, 12)); // NOI18N
+        cmbPosicionInicial.setForeground(new java.awt.Color(0, 0, 0));
         cmbPosicionInicial.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "cm", "m", "km", "mi" }));
         cmbPosicionInicial.setBorder(null);
         add(cmbPosicionInicial, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 132, 73, 32));
 
+        txtPosicionInicial.setBackground(null);
         txtPosicionInicial.setFont(new java.awt.Font("Montserrat Medium", 0, 12)); // NOI18N
+        txtPosicionInicial.setForeground(new java.awt.Color(0, 0, 0));
         txtPosicionInicial.setText("0");
         txtPosicionInicial.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 204, 204), 1, true));
         txtPosicionInicial.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -112,31 +123,41 @@ public class Distancia extends javax.swing.JPanel {
         });
         add(txtPosicionInicial, new org.netbeans.lib.awtextra.AbsoluteConstraints(43, 132, 195, 32));
 
-        jLabel1.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel1.setBackground(null);
         jLabel1.setFont(new java.awt.Font("Montserrat Medium", 0, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Posición inicial");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(43, 108, -1, -1));
 
+        cmbVelocidad.setBackground(null);
         cmbVelocidad.setFont(new java.awt.Font("Montserrat Medium", 0, 12)); // NOI18N
+        cmbVelocidad.setForeground(new java.awt.Color(0, 0, 0));
         cmbVelocidad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "m/s", "km/h", "mi/h" }));
         cmbVelocidad.setBorder(null);
         add(cmbVelocidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 200, 73, 32));
 
+        txtVelocidad.setBackground(null);
         txtVelocidad.setFont(new java.awt.Font("Montserrat Medium", 0, 12)); // NOI18N
+        txtVelocidad.setForeground(new java.awt.Color(0, 0, 0));
         txtVelocidad.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 204, 204), 1, true));
         add(txtVelocidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(43, 200, 195, 32));
 
-        jLabel2.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel2.setBackground(null);
         jLabel2.setFont(new java.awt.Font("Montserrat Medium", 0, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Velocidad");
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(43, 176, -1, -1));
 
+        cmbTiempoInicial.setBackground(null);
         cmbTiempoInicial.setFont(new java.awt.Font("Montserrat Medium", 0, 12)); // NOI18N
+        cmbTiempoInicial.setForeground(new java.awt.Color(0, 0, 0));
         cmbTiempoInicial.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "s", "min", "h" }));
         cmbTiempoInicial.setBorder(null);
         add(cmbTiempoInicial, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 268, 73, 32));
 
+        txtTiempoInicial.setBackground(null);
         txtTiempoInicial.setFont(new java.awt.Font("Montserrat Medium", 0, 12)); // NOI18N
+        txtTiempoInicial.setForeground(new java.awt.Color(0, 0, 0));
         txtTiempoInicial.setText("0");
         txtTiempoInicial.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 204, 204), 1, true));
         txtTiempoInicial.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -146,32 +167,43 @@ public class Distancia extends javax.swing.JPanel {
         });
         add(txtTiempoInicial, new org.netbeans.lib.awtextra.AbsoluteConstraints(43, 268, 195, 32));
 
-        jLabel3.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel3.setBackground(null);
         jLabel3.setFont(new java.awt.Font("Montserrat Medium", 0, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("Tiempo inicial");
         add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(43, 244, -1, -1));
 
+        jLabel6.setBackground(null);
         jLabel6.setFont(new java.awt.Font("Montserrat ExtraBold", 0, 27)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel6.setText("Respuesta");
         add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(351, 40, 380, -1));
 
+        labelBase.setBackground(null);
         labelBase.setFont(new java.awt.Font("Montserrat Medium", 0, 18)); // NOI18N
+        labelBase.setForeground(new java.awt.Color(0, 0, 0));
         labelBase.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         labelBase.setText("X = V * (tf - ti) + Xi");
         add(labelBase, new org.netbeans.lib.awtextra.AbsoluteConstraints(338, 130, 420, -1));
 
+        labelRemplazo.setBackground(null);
         labelRemplazo.setFont(new java.awt.Font("Montserrat Medium", 0, 18)); // NOI18N
+        labelRemplazo.setForeground(new java.awt.Color(0, 0, 0));
         labelRemplazo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         labelRemplazo.setText(" ");
         add(labelRemplazo, new org.netbeans.lib.awtextra.AbsoluteConstraints(338, 170, 420, -1));
 
+        labelRespuesta.setBackground(null);
         labelRespuesta.setFont(new java.awt.Font("Montserrat Medium", 0, 18)); // NOI18N
+        labelRespuesta.setForeground(new java.awt.Color(0, 0, 0));
         labelRespuesta.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         labelRespuesta.setText(" ");
         add(labelRespuesta, new org.netbeans.lib.awtextra.AbsoluteConstraints(338, 250, 420, -1));
 
+        labelResta.setBackground(null);
         labelResta.setFont(new java.awt.Font("Montserrat Medium", 0, 18)); // NOI18N
+        labelResta.setForeground(new java.awt.Color(0, 0, 0));
         labelResta.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         labelResta.setText(" ");
         add(labelResta, new org.netbeans.lib.awtextra.AbsoluteConstraints(338, 210, 420, -1));
@@ -183,6 +215,7 @@ public class Distancia extends javax.swing.JPanel {
         double tiempoFinal;
         double tiempoInicial;
         try {
+            
             tiempoInicial = mt.convertirTiempo(Double.parseDouble(txtTiempoInicial.getText()),
                     cmbTiempoInicial.getSelectedItem().toString());
             tiempoFinal = mt.convertirTiempo(Double.parseDouble(txtTiempoFinal.getText()),
@@ -191,25 +224,21 @@ public class Distancia extends javax.swing.JPanel {
                     cmbPosicionInicial.getSelectedItem().toString());
             velocidad = mv.convertirVelocidad(Double.parseDouble(txtVelocidad.getText()),
                     cmbVelocidad.getSelectedItem().toString());
-            mruc = new ControladorMovRecUni(tiempoInicial, tiempoFinal, velocidad, posInicial, 0);
-            /**
-             * Mostrar cálculos *
-             */
-            if (tiempoFinal>tiempoInicial){
-                  labelRemplazo.setText("X = " + velocidad + " m/s * (" + tiempoFinal
-                    + " s - " + tiempoInicial + " s) + " + posInicial + " m");
-            labelRemplazo.setText("X = " + velocidad + " m/s * (" + tiempoFinal
-                    + " s - " + tiempoInicial + " s) + " + posInicial + " m");
-            labelResta.setText("X = " + velocidad + " m/s * "
-                    + (tiempoFinal - tiempoInicial) + " + " + posInicial + " m");
-            
-            labelRespuesta.setText("X= " + mruc.calcularPosicion() + " m");
-            
-            JOptionPane.showMessageDialog(this,
-                    "Distancia calculada. \n" + mruc.calcularPosicion() + "m");
-            }
-            else{
-                JOptionPane.showMessageDialog(null, "No se puede Compa");
+            //----- Guardar datos -----//
+            mru = new ControladorMovRecUni(tiempoInicial, tiempoFinal, velocidad, posInicial, 0);
+            //----- Condición para mostrar cálculos -----//
+            if (tiempoFinal > tiempoInicial) {
+                labelRemplazo.setText("X = " + velocidad + " m/s * (" + tiempoFinal
+                        + " s - " + tiempoInicial + " s) + " + posInicial + " m");
+                labelRemplazo.setText("X = " + velocidad + " m/s * (" + tiempoFinal
+                        + " s - " + tiempoInicial + " s) + " + posInicial + " m");
+                labelResta.setText("X = " + velocidad + " m/s * "
+                        + (tiempoFinal - tiempoInicial) + " + " + posInicial + " m");
+                labelRespuesta.setText("X= " + mru.calcularPosicion() + " m");
+                JOptionPane.showMessageDialog(this,
+                        "Distancia calculada. \n" + mru.calcularPosicion() + "m");
+            } else {
+                limpiarLabel();
             }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Debe rellenar todos "
@@ -221,19 +250,27 @@ public class Distancia extends javax.swing.JPanel {
         util.limpiarCampos(this);
         Utilidades.aCero(txtTiempoInicial);
         Utilidades.aCero(txtPosicionInicial);
+        limpiarLabel();
     }//GEN-LAST:event_btnLimpiarActionPerformed
 
     private void txtPosicionInicialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPosicionInicialActionPerformed
-        
+
     }//GEN-LAST:event_txtPosicionInicialActionPerformed
 
     private void txtPosicionInicialMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtPosicionInicialMouseClicked
-       
+
     }//GEN-LAST:event_txtPosicionInicialMouseClicked
 
     private void txtTiempoInicialMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtTiempoInicialMouseClicked
-       
+
     }//GEN-LAST:event_txtTiempoInicialMouseClicked
+
+    private void limpiarLabel() {
+        labelRemplazo.setText("");
+        labelRemplazo.setText("");
+        labelResta.setText("");
+        labelRespuesta.setText("");
+    }
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

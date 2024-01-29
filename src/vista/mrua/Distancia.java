@@ -6,7 +6,6 @@ import controlador.convertidor.ControladorLongitud;
 import controlador.convertidor.ControladorTiempo;
 import controlador.convertidor.ControladorVelocidad;
 import javax.swing.JOptionPane;
-import modelo.ModeloMovRecUniAce;
 
 
 public class Distancia extends javax.swing.JPanel {
@@ -15,8 +14,6 @@ public class Distancia extends javax.swing.JPanel {
         initComponents();
     }
     
-    private modelo.ModeloMovRecUniAce mrua = new ModeloMovRecUniAce();
-    private controlador.ControladorMovRecUniAce mruac = new ControladorMovRecUniAce();  
     private ControladorVelocidad mv = new ControladorVelocidad();
     private ControladorTiempo mt = new ControladorTiempo();
     private ControladorLongitud ml = new ControladorLongitud();
@@ -206,10 +203,10 @@ public class Distancia extends javax.swing.JPanel {
             velocidadInicial = mv.convertirVelocidad(Double.parseDouble(txtVelocidadInicial.getText()),
                     cmbVelocidadInicial.getSelectedItem().toString());
             aceleracion = Double.parseDouble(txtAceleracion.getText());
-            mrua = new ModeloMovRecUniAce(tiempoInicial, tiempoFinal, posInicial, posInicial, aceleracion, velocidadInicial, 0);
+            
             //------ Mostrar cálculos -----//
-            JOptionPane.showMessageDialog(this,
-                    "Distancia calculada. \n" + mruac.calcularDistanciaBase()+ "m");
+            //JOptionPane.showMessageDialog(this,
+            //        "Distancia calculada. \n" + mruac.calcularDistanciaBase()+ "m");
             
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this,

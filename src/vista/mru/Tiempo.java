@@ -187,16 +187,16 @@ public class Tiempo extends javax.swing.JPanel {
         double posFinal;
         double velocidad;
         try {
+            //----- Recoger datos y convertirlos en S.I. -----//
             posInicial = ml.convertirLongitud(Double.parseDouble(txtPosicionInicial.getText()),
                     cmbPosicionInicial.getSelectedItem().toString());
             posFinal = ml.convertirLongitud(Double.parseDouble(txtPosicionFinal.getText()),
                     cmbPosicionFinal.getSelectedItem().toString());
             velocidad = mv.convertirVelocidad(Double.parseDouble(txtVelocidad.getText()),
                     cmbVelocidad.getSelectedItem().toString());
+            //----- Guardar datos -----//        
             mruc = new ControladorMovRecUni(0, 0, velocidad, posInicial, posFinal);
-            /**
-             * Mostrar cálculos *
-             */
+            //----- Mostrar cálculos -----//
             JOptionPane.showMessageDialog(this,
                     "Distancia calculada. \n" + mruc.calcularPosicion() + "m");
         } catch (Exception e) {

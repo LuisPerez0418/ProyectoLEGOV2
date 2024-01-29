@@ -3,7 +3,6 @@ package vista.mru;
 import controlador.ControladorMovRecUni;
 import controlador.Utilidades;
 import javax.swing.JOptionPane;
-import modelo.ModeloMovHorizontal;
 import controlador.convertidor.ControladorLongitud;
 import controlador.convertidor.ControladorTiempo;
 
@@ -13,8 +12,7 @@ public class Velocidad extends javax.swing.JPanel {
         initComponents();
     }
 
-    private modelo.ModeloMovHorizontal mru = new ModeloMovHorizontal();
-    private controlador.ControladorMovRecUni mruc = new ControladorMovRecUni();
+    private controlador.ControladorMovRecUni mru = new ControladorMovRecUni();
     private ControladorTiempo mt = new ControladorTiempo();
     private ControladorLongitud ml = new ControladorLongitud();
     private Utilidades util = new Utilidades();
@@ -225,6 +223,7 @@ public class Velocidad extends javax.swing.JPanel {
         double tiempoInicial;
         double tiempoFinal;
         try {
+            //----- Recoger datos y convertirlos en S.I. -----//
             tiempoInicial = mt.convertirTiempo(Double.parseDouble(txtTiempoInicial.getText()),
                     cmbTiempoInicial.getSelectedItem().toString());
             tiempoFinal = mt.convertirTiempo(Double.parseDouble(txtTiempoFinal.getText()),
@@ -233,12 +232,13 @@ public class Velocidad extends javax.swing.JPanel {
                     cmbPosicionInicial.getSelectedItem().toString());
             posFinal = ml.convertirLongitud(Double.parseDouble(txtPosicionFinal.getText()),
                     cmbPosicionFinal.getSelectedItem().toString());
-            mruc = new ControladorMovRecUni(tiempoInicial, tiempoFinal, 0, posInicial, posFinal);
-            /**
-             * Mostrar cálculos *
-             */
-            JOptionPane.showMessageDialog(this,
-                    "Velocidad calculada. \n" + mruc.calcularVelocidad() + " m/s");
+            //----- Guardar datos -----//
+            mru = new ControladorMovRecUni(tiempoInicial, tiempoFinal, 0, posInicial, posFinal);
+            //----- Condición para mostrar cálculos -----//
+            if (tiempoFinal > tiempoInicial) {
+                JOptionPane.showMessageDialog(this,
+                        "Velocidad calculada. \n" + mru.calcularVelocidad() + " m/s");
+            }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Debe rellenar todos "
                     + "los campos para continuar..", "Error", 0);

@@ -21,7 +21,7 @@ public class ControladorMovRecUni extends modelo.ModeloMovHorizontal {
     }
 
     public double calcularPosicion() {
-        return getPosInicial() + getVelocidad() * (getTiempoFinal() - getTiempoInicial());
+        return (getVelocidad() * (getTiempoFinal() - getTiempoInicial())) + getPosInicial();
     }
 
     public double calcularTiempo() {
