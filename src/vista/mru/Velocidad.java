@@ -11,7 +11,11 @@ public class Velocidad extends javax.swing.JPanel {
 
     public Velocidad() {
         initComponents();
-        vf = new VisualizarFormula("V = \\frac{x_f-x_i}{t_f-  t_i}");
+        
+        VisualizarFormula vf = new VisualizarFormula("");
+        
+        vf.setFormula("V = \\frac{x_f-x_i}{t_f-  t_i}");
+        
         labelBase.setIcon(vf.getIcon());
     }
 
@@ -19,7 +23,7 @@ public class Velocidad extends javax.swing.JPanel {
     private ControladorTiempo mt = new ControladorTiempo();
     private ControladorLongitud ml = new ControladorLongitud();
     private Utilidades util = new Utilidades();
-    private VisualizarFormula vf;
+
 
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -209,20 +213,32 @@ public class Velocidad extends javax.swing.JPanel {
             mru = new ControladorMovRecUni(tiempoInicial, tiempoFinal, 0, posInicial, posFinal);
             //----- Condición para mostrar cálculos -----//
             if (tiempoFinal > tiempoInicial) {
-                vf = new VisualizarFormula("V = \\frac{" + posFinal + " m - " + posInicial
-                        + "m} {"+ tiempoFinal + "s - " + tiempoInicial + " s");
+                // Calcular diferencias de posición y tiempo
+                double diferenciaPosicion = posFinal - posInicial;
+                double diferenciaTiempo = tiempoFinal - tiempoInicial;
+
+                // Crear una instancia de VisualizarFormula
+                VisualizarFormula vf = new VisualizarFormula("");
+
+                // Crear la fórmula para la posición
+                vf.setFormula("V = \\frac{" + posFinal+ "m - "+ posInicial+" m} "
+                        + "{" + tiempoFinal+ "s - "+ tiempoInicial+" s}");
+                
                 labelRemplazo.setIcon(vf.getIcon());
-                vf = new VisualizarFormula("V = \\frac{" + (posFinal - posInicial)
-                        + "m} {"+ (tiempoFinal - tiempoInicial) + " s");
+
+                // Crear la fórmula para la posición sin los valores detallados
+                vf.setFormula("V = \\frac{" + diferenciaPosicion + "m} {" + diferenciaTiempo + " s}");
                 labelResta.setIcon(vf.getIcon());
-                vf = new VisualizarFormula("V = " + mru.calcularVelocidad() + " \\frac{m}{s}");
+
+                // Crear la fórmula para la velocidad y mostrar el mensaje
+                vf.setFormula("V = " + mru.calcularVelocidad() + " \\frac{m}{s}");
                 labelRespuesta.setIcon(vf.getIcon());
-                JOptionPane.showMessageDialog(this,
-                        "Velocidad calculada. \n" + mru.calcularVelocidad() + " m/s");
+                JOptionPane.showMessageDialog(this, "Velocidad calculada. \n" + mru.calcularVelocidad() + " m/s");
             }
+
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Debe rellenar todos "
-                    + "los campos para continuar..", "Error", 0);
+            //JOptionPane.showMessageDialog(null, "Debe rellenar todos "
+              //      + "los campos para continuar..", "Error", 0);
         }
     }//GEN-LAST:event_btnCalcularActionPerformed
 

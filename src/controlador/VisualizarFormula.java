@@ -14,15 +14,29 @@ public class VisualizarFormula {
         this.formula = formula;
     }
 
-    public TeXIcon getIcon(){
+    public void setFormula(String formula) {
+        this.formula = formula;
         try {
             this.form = new TeXFormula(this.formula);
             this.icon = this.form.createTeXIcon(TeXConstants.ALIGN_LEFT, 27);
+        } catch (Exception e) {
+            System.out.println("Error: " + e.getMessage());
+        }
+    }
+
+    public TeXIcon getIcon() {
+        return this.icon;
+    }
+    
+    public TeXIcon getIconTitulos(){
+        try {
+            this.form = new TeXFormula(this.formula);
+            this.icon = this.form.createTeXIcon(TeXConstants.ALIGN_LEFT, 14);
             return this.icon;
         } catch (Exception e) {
             System.out.println("Error: " + e.getMessage());
             return this.icon = null;
         }
     }
- 
 }
+
