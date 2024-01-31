@@ -3,7 +3,6 @@ package vista;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import javax.swing.ImageIcon;
-import vista.mru.Distancia;
 import vista.mru.Tiempo;
 import vista.mru.Velocidad;
 
