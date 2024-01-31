@@ -2,6 +2,10 @@ package controlador;
 
 public class ControladorMovRecUniAce extends modelo.ModeloMovHorizontal {
     
+    public ControladorMovRecUniAce(){
+        
+    }
+    
     public ControladorMovRecUniAce(double tiempoInicial, double tiempoFinal,
             double posInicial, double posFinal, double aceleracion,
             double velocidadInicial, double velocidadFinal) {

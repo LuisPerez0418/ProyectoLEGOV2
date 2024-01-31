@@ -146,7 +146,7 @@ public class vistaMRU extends javax.swing.JPanel {
         labelCuadro.setPreferredSize(new java.awt.Dimension(135, 40));
         Menu.add(labelCuadro, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, 190, 310));
 
-        add(Menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 170, 470));
+        add(Menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, 170, 470));
 
         javax.swing.GroupLayout contenidoLayout = new javax.swing.GroupLayout(contenido);
         contenido.setLayout(contenidoLayout);

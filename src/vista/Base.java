@@ -450,7 +450,7 @@ public class Base extends javax.swing.JFrame {
     //----- Rellenar paneles ------//
     private void mostrarMRU() {
         vistaMRU vista = new vistaMRU();
-        vista.setSize(860, 470);
+        vista.setSize(890, 470);
         vista.setLocation(0, 0);
         bg.removeAll();
         bg.add(vista, BorderLayout.CENTER);
@@ -460,7 +460,7 @@ public class Base extends javax.swing.JFrame {
 
     private void mostrarMRUA() {
         vistaMRUA vista = new vistaMRUA();
-        vista.setSize(860, 470);
+        vista.setSize(890, 470);
         vista.setLocation(0, 0);
         bg.removeAll();
         bg.add(vista, BorderLayout.CENTER);
@@ -470,7 +470,7 @@ public class Base extends javax.swing.JFrame {
 
     private void mostrarCaidaLibre() {
         vistaCaidaLibre vista = new vistaCaidaLibre();
-        vista.setSize(860, 470);
+        vista.setSize(890, 470);
         vista.setLocation(0, 0);
 
         bg.removeAll();
@@ -481,7 +481,7 @@ public class Base extends javax.swing.JFrame {
 
     private void mostrarTiroVertical() {
         vistaTiroVertical vista = new vistaTiroVertical();
-        vista.setSize(860, 470);
+        vista.setSize(890, 470);
         vista.setLocation(0, 0);
 
         bg.removeAll();
@@ -492,7 +492,7 @@ public class Base extends javax.swing.JFrame {
 
     private void mostrarMovParabolico() {
         vistaMovParabolico vista = new vistaMovParabolico();
-        vista.setSize(860, 470);
+        vista.setSize(890, 470);
         vista.setLocation(0, 0);
 
         bg.removeAll();
@@ -503,7 +503,7 @@ public class Base extends javax.swing.JFrame {
 
     private void mostrarMCU() {
         vistaMCU vista = new vistaMCU();
-        vista.setSize(860, 470);
+        vista.setSize(890, 470);
         vista.setLocation(0, 0);
 
         bg.removeAll();
@@ -514,7 +514,7 @@ public class Base extends javax.swing.JFrame {
 
     private void mostrarMCUA() {
         vistaMCUA vista = new vistaMCUA();
-        vista.setSize(860, 470);
+        vista.setSize(890, 470);
         vista.setLocation(0, 0);
 
         bg.removeAll();

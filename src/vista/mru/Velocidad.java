@@ -2,6 +2,7 @@ package vista.mru;
 
 import controlador.ControladorMovRecUni;
 import controlador.Utilidades;
+import controlador.VisualizarFormula;
 import javax.swing.JOptionPane;
 import controlador.convertidor.ControladorLongitud;
 import controlador.convertidor.ControladorTiempo;
@@ -10,12 +11,15 @@ public class Velocidad extends javax.swing.JPanel {
 
     public Velocidad() {
         initComponents();
+        vf = new VisualizarFormula("V = \\frac{x_f-x_i}{t_f-  t_i}");
+        labelBase.setIcon(vf.getIcon());
     }
 
     private controlador.ControladorMovRecUni mru = new ControladorMovRecUni();
     private ControladorTiempo mt = new ControladorTiempo();
     private ControladorLongitud ml = new ControladorLongitud();
     private Utilidades util = new Utilidades();
+    private VisualizarFormula vf;
 
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -38,8 +42,8 @@ public class Velocidad extends javax.swing.JPanel {
         jLabel6 = new javax.swing.JLabel();
         labelBase = new javax.swing.JLabel();
         labelRemplazo = new javax.swing.JLabel();
-        labelRespuesta = new javax.swing.JLabel();
         labelResta = new javax.swing.JLabel();
+        labelRespuesta = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -161,27 +165,23 @@ public class Velocidad extends javax.swing.JPanel {
 
         labelBase.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
         labelBase.setForeground(new java.awt.Color(0, 0, 0));
-        labelBase.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        labelBase.setText("V = (Xf - Xi) / (Tf - Ti)");
-        add(labelBase, new org.netbeans.lib.awtextra.AbsoluteConstraints(338, 130, 390, -1));
+        labelBase.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        add(labelBase, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 110, 360, 70));
 
         labelRemplazo.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
         labelRemplazo.setForeground(new java.awt.Color(0, 0, 0));
-        labelRemplazo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        labelRemplazo.setText(" ");
-        add(labelRemplazo, new org.netbeans.lib.awtextra.AbsoluteConstraints(338, 170, 390, -1));
-
-        labelRespuesta.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
-        labelRespuesta.setForeground(new java.awt.Color(0, 0, 0));
-        labelRespuesta.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        labelRespuesta.setText(" ");
-        add(labelRespuesta, new org.netbeans.lib.awtextra.AbsoluteConstraints(338, 250, 390, -1));
+        labelRemplazo.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        add(labelRemplazo, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 190, 360, 70));
 
         labelResta.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
         labelResta.setForeground(new java.awt.Color(0, 0, 0));
-        labelResta.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        labelResta.setText(" ");
-        add(labelResta, new org.netbeans.lib.awtextra.AbsoluteConstraints(338, 210, 390, -1));
+        labelResta.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        add(labelResta, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 270, 360, 70));
+
+        labelRespuesta.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
+        labelRespuesta.setForeground(new java.awt.Color(0, 0, 0));
+        labelRespuesta.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        add(labelRespuesta, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 350, 360, 70));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed
@@ -209,11 +209,14 @@ public class Velocidad extends javax.swing.JPanel {
             mru = new ControladorMovRecUni(tiempoInicial, tiempoFinal, 0, posInicial, posFinal);
             //----- Condición para mostrar cálculos -----//
             if (tiempoFinal > tiempoInicial) {
-                labelRemplazo.setText("V = (" + posFinal + " m - " + posInicial
-                        + " m) / (" + tiempoFinal + " s - " + tiempoInicial + " s)");
-                labelResta.setText("V = " + (posFinal - posInicial) + " m / "
-                        + (tiempoFinal - tiempoInicial) + " s)");
-                labelRespuesta.setText("V = " + mru.calcularVelocidad() + " m/s");
+                vf = new VisualizarFormula("V = \\frac{" + posFinal + " m - " + posInicial
+                        + "m} {"+ tiempoFinal + "s - " + tiempoInicial + " s");
+                labelRemplazo.setIcon(vf.getIcon());
+                vf = new VisualizarFormula("V = \\frac{" + (posFinal - posInicial)
+                        + "m} {"+ (tiempoFinal - tiempoInicial) + " s");
+                labelResta.setIcon(vf.getIcon());
+                vf = new VisualizarFormula("V = " + mru.calcularVelocidad() + " \\frac{m}{s}");
+                labelRespuesta.setIcon(vf.getIcon());
                 JOptionPane.showMessageDialog(this,
                         "Velocidad calculada. \n" + mru.calcularVelocidad() + " m/s");
             }

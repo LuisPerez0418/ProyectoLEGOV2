@@ -3,6 +3,7 @@ package vista;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import javax.swing.ImageIcon;
+import vista.mru.Distancia;
 import vista.mru.Tiempo;
 import vista.mru.Velocidad;
 
@@ -54,7 +55,7 @@ public class vistaMRUA extends javax.swing.JPanel {
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Calcular");
-        Menu.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 35, 140, -1));
+        Menu.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 25, 140, -1));
 
         btnVelocidadInicial.setBackground(new java.awt.Color(231, 231, 231));
         btnVelocidadInicial.setMaximumSize(new java.awt.Dimension(135, 40));
@@ -81,7 +82,7 @@ public class vistaMRUA extends javax.swing.JPanel {
         bgVelocidadInicial.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/utiliarios/menuSinColor.png"))); // NOI18N
         btnVelocidadInicial.add(bgVelocidadInicial, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
-        Menu.add(btnVelocidadInicial, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 80, 152, 40));
+        Menu.add(btnVelocidadInicial, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 70, 152, 40));
 
         btnVelocidadFinal.setBackground(new java.awt.Color(231, 231, 231));
         btnVelocidadFinal.setMaximumSize(new java.awt.Dimension(135, 40));
@@ -108,7 +109,7 @@ public class vistaMRUA extends javax.swing.JPanel {
         bgVelocidadFinal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/utiliarios/menuSinColor.png"))); // NOI18N
         btnVelocidadFinal.add(bgVelocidadFinal, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
-        Menu.add(btnVelocidadFinal, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 120, 152, 40));
+        Menu.add(btnVelocidadFinal, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 110, 152, 40));
 
         btnDistancia.setBackground(new java.awt.Color(231, 231, 231));
         btnDistancia.setMaximumSize(new java.awt.Dimension(135, 40));
@@ -136,7 +137,7 @@ public class vistaMRUA extends javax.swing.JPanel {
         bgDistancia.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/utiliarios/menuSinColor.png"))); // NOI18N
         btnDistancia.add(bgDistancia, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
-        Menu.add(btnDistancia, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 160, 152, 40));
+        Menu.add(btnDistancia, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 150, 152, 40));
 
         btnTiempo.setBackground(new java.awt.Color(231, 231, 231));
         btnTiempo.setMaximumSize(new java.awt.Dimension(135, 40));
@@ -164,7 +165,7 @@ public class vistaMRUA extends javax.swing.JPanel {
         bgTiempo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/utiliarios/menuSinColor.png"))); // NOI18N
         btnTiempo.add(bgTiempo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
-        Menu.add(btnTiempo, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 200, 152, 40));
+        Menu.add(btnTiempo, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 190, 152, 40));
 
         btnAceleracion.setBackground(new java.awt.Color(231, 231, 231));
         btnAceleracion.setMaximumSize(new java.awt.Dimension(135, 40));
@@ -192,7 +193,7 @@ public class vistaMRUA extends javax.swing.JPanel {
         bgAceleracion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/utiliarios/menuSinColor.png"))); // NOI18N
         btnAceleracion.add(bgAceleracion, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
-        Menu.add(btnAceleracion, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 240, 152, 40));
+        Menu.add(btnAceleracion, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 230, 152, 40));
 
         labelCuadro.setBackground(new java.awt.Color(0, 0, 0));
         labelCuadro.setFont(new java.awt.Font("Montserrat Medium", 0, 15)); // NOI18N
@@ -202,7 +203,10 @@ public class vistaMRUA extends javax.swing.JPanel {
         labelCuadro.setMaximumSize(new java.awt.Dimension(135, 40));
         labelCuadro.setMinimumSize(new java.awt.Dimension(135, 40));
         labelCuadro.setPreferredSize(new java.awt.Dimension(135, 40));
-        Menu.add(labelCuadro, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, -20, 190, 510));
+        Menu.add(labelCuadro, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, -30, 190, 510));
+
+        contenido.setBackground(new java.awt.Color(51, 255, 255));
+        contenido.setForeground(new java.awt.Color(102, 0, 0));
 
         javax.swing.GroupLayout contenidoLayout = new javax.swing.GroupLayout(contenido);
         contenido.setLayout(contenidoLayout);
@@ -363,7 +367,7 @@ public class vistaMRUA extends javax.swing.JPanel {
     }
 
     private void mostrarDistancia() {
-        vista.mru.Distancia vista = new vista.mru.Distancia();
+        vista.mrua.Distancia vista = new vista.mrua.Distancia();
         vista.setSize(720, 470);
         vista.setLocation(0, 0);
         contenido.removeAll();

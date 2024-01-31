@@ -27,6 +27,7 @@ public class Distancia extends javax.swing.JPanel {
         header = new javax.swing.JPanel();
         btnFormulaUno = new javax.swing.JButton();
         btnFormulaDos = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
         bg = new javax.swing.JPanel();
 
         setBackground(new java.awt.Color(255, 255, 255));
@@ -44,7 +45,7 @@ public class Distancia extends javax.swing.JPanel {
                 btnFormulaUnoActionPerformed(evt);
             }
         });
-        header.add(btnFormulaUno, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 10, 220, 40));
+        header.add(btnFormulaUno, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 30, 220, 40));
 
         btnFormulaDos.setText("xxx");
         btnFormulaDos.addActionListener(new java.awt.event.ActionListener() {
@@ -52,9 +53,12 @@ public class Distancia extends javax.swing.JPanel {
                 btnFormulaDosActionPerformed(evt);
             }
         });
-        header.add(btnFormulaDos, new org.netbeans.lib.awtextra.AbsoluteConstraints(417, 10, 260, 40));
+        header.add(btnFormulaDos, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 30, 260, 40));
 
-        add(header, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 720, 60));
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/utiliarios/headerFormulas.png"))); // NOI18N
+        header.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, -1, -1));
+
+        add(header, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 720, 80));
 
         javax.swing.GroupLayout bgLayout = new javax.swing.GroupLayout(bg);
         bg.setLayout(bgLayout);
@@ -90,5 +94,6 @@ public class Distancia extends javax.swing.JPanel {
     private javax.swing.JButton btnFormulaDos;
     private javax.swing.JButton btnFormulaUno;
     private javax.swing.JPanel header;
+    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }
