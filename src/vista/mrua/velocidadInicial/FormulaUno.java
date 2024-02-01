@@ -2,7 +2,6 @@ package vista.mrua.velocidadInicial;
 
 import controlador.Utilidades;
 import controlador.ControladorMovRecUniAce;
-import controlador.convertidor.ControladorLongitud;
 import controlador.convertidor.ControladorTiempo;
 import controlador.convertidor.ControladorVelocidad;
 import javax.swing.JOptionPane;
@@ -16,7 +15,6 @@ public class FormulaUno extends javax.swing.JPanel {
     private ControladorMovRecUniAce mrua = new ControladorMovRecUniAce();
     private ControladorVelocidad mv = new ControladorVelocidad();
     private ControladorTiempo mt = new ControladorTiempo();
-    private ControladorLongitud ml = new ControladorLongitud();
     private Utilidades util = new Utilidades();
 
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -159,11 +157,10 @@ public class FormulaUno extends javax.swing.JPanel {
 
     private void btnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularActionPerformed
         double velocidadFinal;
-        double tiempoFinal;
-        double tiempoInicial;
         double aceleracion;
+        double tiempoInicial;
+        double tiempoFinal;
         try {
-            
             tiempoInicial = mt.convertirTiempo(Double.parseDouble(txtTiempoInicial.getText()),
                 cmbTiempoInicial.getSelectedItem().toString());
             tiempoFinal = mt.convertirTiempo(Double.parseDouble(txtTiempoFinal.getText()),

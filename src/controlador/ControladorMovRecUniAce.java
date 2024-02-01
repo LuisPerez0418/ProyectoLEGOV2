@@ -40,8 +40,16 @@ public class ControladorMovRecUniAce extends modelo.ModeloMovHorizontal {
     }
 
     //----- Velocidad final ------//
-    public double calcularVelocidadFinal() {
-        return (getVelocidadInicial() + (getAceleracion() * getTiempo()));
+    public double calcularVelocidadFinalFUno() {
+        return getVelocidadInicial() + getAceleracion() * getTiempo();
+    }
+
+    public double calcularVelocidadFinalFDos() {
+        return 2 * (getPosicion() / getTiempo()) - getVelocidadInicial();
+    }
+
+    public double calcularVelocidadFinalFTres() {
+        return (getPosicion() / getTiempo()) + (1 / 2) * getAceleracion() * getTiempo();
     }
 
     //----- Distancia -----//
@@ -59,12 +67,27 @@ public class ControladorMovRecUniAce extends modelo.ModeloMovHorizontal {
                 / (2 * getAceleracion()) + getPosInicial();
     }
 
-    public double calcularTiempo() {
+    //----- Tiempo -----//
+    public double calcularTiempoFUno() {
         return (getVelocidadFinal() - getVelocidadInicial()) / getAceleracion();
     }
 
-    public double calcularAceleracion() {
-        return ((getVelocidadFinal() - getVelocidadInicial()) / (getTiempo()));
+    public double calcularTiempoFDos() {
+        return (2 * getPosicion()) / (getVelocidadFinal() - getVelocidadInicial());
     }
 
+    //----- Aceleración ------//
+    public double calcularAceleracionFUno() {
+        return ((getVelocidadFinal() - getVelocidadInicial()) / getTiempo()) - getVelocidadInicial();
+    }
+
+    public double calcularAceleracionFDos() {
+        return (getPosicion() - (getVelocidadInicial() * getTiempo()))
+                / ((1 / 2) * Math.pow(getTiempo(), 2));
+    }
+
+    public double calcularAceleracionFTres() {
+        return (Math.pow(getVelocidadFinal(), 2) - Math.pow(getVelocidadInicial(), 2))
+                / (2 * getPosicion());
+    }
 }

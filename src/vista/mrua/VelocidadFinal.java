@@ -4,17 +4,16 @@ import controlador.VisualizarFormula;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import javax.swing.ImageIcon;
-import vista.mrua.distancia.FormulaUno;
 
 public class VelocidadFinal extends javax.swing.JPanel {
 
     public VelocidadFinal() {
         initComponents(); 
-        vf = new VisualizarFormula("v_f = 2 * \\frac{d}{t}-v_i");
-        labelFUno.setIcon(vf.getIconTitulos());
         vf = new VisualizarFormula("v_f = v_i+a*t");
+        labelFUno.setIcon(vf.getIconTitulos());
+        vf = new VisualizarFormula("v_f = 2 * \\frac{x}{t}-v_i");
         labelFDos.setIcon(vf.getIconTitulos());
-        vf = new VisualizarFormula("v_f = \\frac{d}{t}+\\frac{1}{2}*a*t");
+        vf = new VisualizarFormula("v_f = \\frac{x}{t}+\\frac{1}{2}*a*t");
         labelFTres.setIcon(vf.getIconTitulos());
         seleccionFUno();
         mostrarFUno();
@@ -174,7 +173,7 @@ public class VelocidadFinal extends javax.swing.JPanel {
     }//GEN-LAST:event_btnFDosMouseExited
 
     private void btnFDosMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnFDosMousePressed
-        mostrarFUno();
+        mostrarFDos();
         //----- Colorear y descolorear botones -----//
         resetearTodo();
         seleccionFDos();
@@ -192,7 +191,7 @@ public class VelocidadFinal extends javax.swing.JPanel {
     }//GEN-LAST:event_btnFTresMouseExited
 
     private void btnFTresMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnFTresMousePressed
-        mostrarFUno();
+        mostrarFTres();
         //----- Colorear y descolorear botones -----//
         resetearTodo();
         seleccionFTres();
@@ -200,7 +199,27 @@ public class VelocidadFinal extends javax.swing.JPanel {
 
     //----- Rellenar paneles ------//
     public void mostrarFUno() {
-        vista.mrua.distancia.FormulaUno vista = new FormulaUno();
+        vista.mrua.velocidadFinal.FormulaUno vista = new vista.mrua.velocidadFinal.FormulaUno();
+        vista.setSize(860, 470);
+        vista.setLocation(0, 0);
+        bg.removeAll();
+        bg.add(vista, BorderLayout.CENTER);
+        bg.revalidate();
+        bg.repaint();
+    }
+    
+    public void mostrarFDos() {
+        vista.mrua.velocidadFinal.FormulaDos vista = new vista.mrua.velocidadFinal.FormulaDos();
+        vista.setSize(860, 470);
+        vista.setLocation(0, 0);
+        bg.removeAll();
+        bg.add(vista, BorderLayout.CENTER);
+        bg.revalidate();
+        bg.repaint();
+    }
+    
+    public void mostrarFTres() {
+        vista.mrua.velocidadFinal.FormulaTres vista = new vista.mrua.velocidadFinal.FormulaTres();
         vista.setSize(860, 470);
         vista.setLocation(0, 0);
         bg.removeAll();

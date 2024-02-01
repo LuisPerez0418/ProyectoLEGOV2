@@ -4,9 +4,6 @@ import controlador.VisualizarFormula;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import javax.swing.ImageIcon;
-import vista.mrua.distancia.FormulaDos;
-import vista.mrua.distancia.FormulaTres;
-import vista.mrua.distancia.FormulaUno;
 
 public class Distancia extends javax.swing.JPanel {
 
@@ -202,7 +199,7 @@ public class Distancia extends javax.swing.JPanel {
 
     //----- Rellenar paneles ------//
     public void mostrarFUno() {
-        vista.mrua.distancia.FormulaUno vista = new FormulaUno();
+        vista.mrua.distancia.FormulaUno vista = new vista.mrua.distancia.FormulaUno();
         vista.setSize(860, 470);
         vista.setLocation(0, 0);
         bg.removeAll();
@@ -212,7 +209,7 @@ public class Distancia extends javax.swing.JPanel {
     }
     
     public void mostrarFDos() {
-        vista.mrua.distancia.FormulaDos vista = new FormulaDos();
+        vista.mrua.distancia.FormulaDos vista = new vista.mrua.distancia.FormulaDos();
         vista.setSize(860, 470);
         vista.setLocation(0, 0);
         bg.removeAll();
@@ -222,7 +219,7 @@ public class Distancia extends javax.swing.JPanel {
     }
     
     public void mostrarFTres() {
-        vista.mrua.distancia.FormulaTres vista = new FormulaTres();
+        vista.mrua.distancia.FormulaTres vista = new vista.mrua.distancia.FormulaTres();
         vista.setSize(860, 470);
         vista.setLocation(0, 0);
         bg.removeAll();

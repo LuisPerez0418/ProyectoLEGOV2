@@ -184,18 +184,18 @@ public class FormulaUno extends javax.swing.JPanel {
     private void btnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularActionPerformed
         double posInicial;
         double velocidadInicial;
-        double tiempoFinal;
         double tiempoInicial;
+        double tiempoFinal;
         double aceleracion;
         try {
-            tiempoInicial = mt.convertirTiempo(Double.parseDouble(txtTiempoInicial.getText()),
-                cmbTiempoInicial.getSelectedItem().toString());
-            tiempoFinal = mt.convertirTiempo(Double.parseDouble(txtTiempoFinal.getText()),
-                cmbTiempoFinal.getSelectedItem().toString());
             posInicial = ml.convertirLongitud(Double.parseDouble(txtPosicionInicial.getText()),
                 cmbPosicionInicial.getSelectedItem().toString());
             velocidadInicial = mv.convertirVelocidad(Double.parseDouble(txtVelocidadInicial.getText()),
                 cmbVelocidadInicial.getSelectedItem().toString());
+            tiempoInicial = mt.convertirTiempo(Double.parseDouble(txtTiempoInicial.getText()),
+                cmbTiempoInicial.getSelectedItem().toString());
+            tiempoFinal = mt.convertirTiempo(Double.parseDouble(txtTiempoFinal.getText()),
+                cmbTiempoFinal.getSelectedItem().toString());
             aceleracion = Double.parseDouble(txtAceleracion.getText());
             //------ Mostrar cálculos -----//
             if (tiempoFinal > tiempoInicial){

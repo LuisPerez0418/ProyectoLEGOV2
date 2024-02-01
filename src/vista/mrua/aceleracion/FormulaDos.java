@@ -1,18 +1,20 @@
-package vista.mrua.velocidadInicial;
+package vista.mrua.aceleracion;
 
 import controlador.Utilidades;
 import controlador.ControladorMovRecUniAce;
 import controlador.convertidor.ControladorLongitud;
 import controlador.convertidor.ControladorTiempo;
+import controlador.convertidor.ControladorVelocidad;
 import javax.swing.JOptionPane;
 
-public class FormulaTres extends javax.swing.JPanel {
+public class FormulaDos extends javax.swing.JPanel {
 
-    public FormulaTres() {
+    public FormulaDos() {
         initComponents();
     }
 
     private ControladorMovRecUniAce mrua = new ControladorMovRecUniAce();
+    private ControladorVelocidad mv = new ControladorVelocidad();
     private ControladorTiempo mt = new ControladorTiempo();
     private ControladorLongitud ml = new ControladorLongitud();
     private Utilidades util = new Utilidades();
@@ -20,13 +22,7 @@ public class FormulaTres extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel4 = new javax.swing.JLabel();
-        txtTiempoFinal = new javax.swing.JTextField();
-        cmbTiempoFinal = new javax.swing.JComboBox<>();
         jLabel5 = new javax.swing.JLabel();
-        txtTiempoInicial = new javax.swing.JTextField();
-        cmbTiempoInicial = new javax.swing.JComboBox<>();
-        jLabel3 = new javax.swing.JLabel();
         btnLimpiar = new javax.swing.JButton();
         btnCalcular = new javax.swing.JButton();
         txtPosInicial = new javax.swing.JTextField();
@@ -36,8 +32,14 @@ public class FormulaTres extends javax.swing.JPanel {
         cmbPosFinal = new javax.swing.JComboBox<>();
         jLabel8 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        cmbAceleracion = new javax.swing.JComboBox<>();
-        txtAceleracion = new javax.swing.JTextField();
+        cmbVelocidadInicial = new javax.swing.JComboBox<>();
+        txtVelocidadInicial = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        txtTiempoFinal = new javax.swing.JTextField();
+        cmbTiempoFinal = new javax.swing.JComboBox<>();
+        txtTiempoInicial = new javax.swing.JTextField();
+        cmbTiempoInicial = new javax.swing.JComboBox<>();
+        jLabel3 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setMaximumSize(new java.awt.Dimension(720, 470));
@@ -45,50 +47,11 @@ public class FormulaTres extends javax.swing.JPanel {
         setPreferredSize(new java.awt.Dimension(720, 470));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel4.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel4.setFont(new java.awt.Font("Montserrat Medium", 0, 14)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel4.setText("Tiempo Final");
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 160, -1, -1));
-
-        txtTiempoFinal.setBackground(new java.awt.Color(255, 255, 255));
-        txtTiempoFinal.setFont(new java.awt.Font("Montserrat Medium", 0, 12)); // NOI18N
-        txtTiempoFinal.setForeground(new java.awt.Color(0, 0, 0));
-        txtTiempoFinal.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 204, 204), 1, true));
-        add(txtTiempoFinal, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 180, 195, 32));
-
-        cmbTiempoFinal.setBackground(new java.awt.Color(255, 255, 255));
-        cmbTiempoFinal.setFont(new java.awt.Font("Montserrat Medium", 0, 12)); // NOI18N
-        cmbTiempoFinal.setForeground(new java.awt.Color(0, 0, 0));
-        cmbTiempoFinal.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "s", "min", "h" }));
-        cmbTiempoFinal.setBorder(null);
-        add(cmbTiempoFinal, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 180, 73, 32));
-
         jLabel5.setFont(new java.awt.Font("Montserrat ExtraBold", 0, 27)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setText("Digite los datos");
         add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, -1, -1));
-
-        txtTiempoInicial.setBackground(new java.awt.Color(255, 255, 255));
-        txtTiempoInicial.setFont(new java.awt.Font("Montserrat Medium", 0, 12)); // NOI18N
-        txtTiempoInicial.setForeground(new java.awt.Color(0, 0, 0));
-        txtTiempoInicial.setText("0");
-        txtTiempoInicial.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 204, 204), 1, true));
-        add(txtTiempoInicial, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 180, 195, 32));
-
-        cmbTiempoInicial.setBackground(new java.awt.Color(255, 255, 255));
-        cmbTiempoInicial.setFont(new java.awt.Font("Montserrat Medium", 0, 12)); // NOI18N
-        cmbTiempoInicial.setForeground(new java.awt.Color(0, 0, 0));
-        cmbTiempoInicial.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "s", "min", "h" }));
-        cmbTiempoInicial.setBorder(null);
-        add(cmbTiempoInicial, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 180, 73, 32));
-
-        jLabel3.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel3.setFont(new java.awt.Font("Montserrat Medium", 0, 14)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel3.setText("Tiempo inicial");
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 160, -1, -1));
 
         btnLimpiar.setBackground(new java.awt.Color(204, 204, 204));
         btnLimpiar.setFont(new java.awt.Font("Montserrat Medium", 0, 12)); // NOI18N
@@ -166,35 +129,78 @@ public class FormulaTres extends javax.swing.JPanel {
         jLabel7.setBackground(new java.awt.Color(0, 0, 0));
         jLabel7.setFont(new java.awt.Font("Montserrat Medium", 0, 14)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel7.setText("Aceleración");
+        jLabel7.setText("Velocidad inicial");
         add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 230, -1, -1));
 
-        cmbAceleracion.setBackground(new java.awt.Color(255, 255, 255));
-        cmbAceleracion.setFont(new java.awt.Font("Montserrat Medium", 0, 12)); // NOI18N
-        cmbAceleracion.setForeground(new java.awt.Color(0, 0, 0));
-        cmbAceleracion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "m/s²" }));
-        cmbAceleracion.setBorder(null);
-        add(cmbAceleracion, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 250, 73, 32));
+        cmbVelocidadInicial.setBackground(new java.awt.Color(255, 255, 255));
+        cmbVelocidadInicial.setFont(new java.awt.Font("Montserrat Medium", 0, 12)); // NOI18N
+        cmbVelocidadInicial.setForeground(new java.awt.Color(0, 0, 0));
+        cmbVelocidadInicial.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "m/s", "km/h", "mi/h" }));
+        cmbVelocidadInicial.setBorder(null);
+        add(cmbVelocidadInicial, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 250, 73, 32));
 
-        txtAceleracion.setBackground(new java.awt.Color(255, 255, 255));
-        txtAceleracion.setFont(new java.awt.Font("Montserrat Medium", 0, 12)); // NOI18N
-        txtAceleracion.setForeground(new java.awt.Color(0, 0, 0));
-        txtAceleracion.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 204, 204), 1, true));
-        add(txtAceleracion, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 250, 195, 32));
+        txtVelocidadInicial.setBackground(new java.awt.Color(255, 255, 255));
+        txtVelocidadInicial.setFont(new java.awt.Font("Montserrat Medium", 0, 12)); // NOI18N
+        txtVelocidadInicial.setForeground(new java.awt.Color(0, 0, 0));
+        txtVelocidadInicial.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 204, 204), 1, true));
+        txtVelocidadInicial.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtVelocidadInicialActionPerformed(evt);
+            }
+        });
+        add(txtVelocidadInicial, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 250, 195, 32));
+
+        jLabel4.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel4.setFont(new java.awt.Font("Montserrat Medium", 0, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel4.setText("Tiempo Final");
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 160, -1, -1));
+
+        txtTiempoFinal.setBackground(new java.awt.Color(255, 255, 255));
+        txtTiempoFinal.setFont(new java.awt.Font("Montserrat Medium", 0, 12)); // NOI18N
+        txtTiempoFinal.setForeground(new java.awt.Color(0, 0, 0));
+        txtTiempoFinal.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 204, 204), 1, true));
+        add(txtTiempoFinal, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 180, 195, 32));
+
+        cmbTiempoFinal.setBackground(new java.awt.Color(255, 255, 255));
+        cmbTiempoFinal.setFont(new java.awt.Font("Montserrat Medium", 0, 12)); // NOI18N
+        cmbTiempoFinal.setForeground(new java.awt.Color(0, 0, 0));
+        cmbTiempoFinal.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "s", "min", "h" }));
+        cmbTiempoFinal.setBorder(null);
+        add(cmbTiempoFinal, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 180, 73, 32));
+
+        txtTiempoInicial.setBackground(new java.awt.Color(255, 255, 255));
+        txtTiempoInicial.setFont(new java.awt.Font("Montserrat Medium", 0, 12)); // NOI18N
+        txtTiempoInicial.setForeground(new java.awt.Color(0, 0, 0));
+        txtTiempoInicial.setText("0");
+        txtTiempoInicial.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 204, 204), 1, true));
+        add(txtTiempoInicial, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 180, 195, 32));
+
+        cmbTiempoInicial.setBackground(new java.awt.Color(255, 255, 255));
+        cmbTiempoInicial.setFont(new java.awt.Font("Montserrat Medium", 0, 12)); // NOI18N
+        cmbTiempoInicial.setForeground(new java.awt.Color(0, 0, 0));
+        cmbTiempoInicial.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "s", "min", "h" }));
+        cmbTiempoInicial.setBorder(null);
+        add(cmbTiempoInicial, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 180, 73, 32));
+
+        jLabel3.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel3.setFont(new java.awt.Font("Montserrat Medium", 0, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel3.setText("Tiempo inicial");
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 160, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed
         util.limpiarCampos(this);
-        txtTiempoInicial.setText("0");
         txtPosInicial.setText("0");
     }//GEN-LAST:event_btnLimpiarActionPerformed
 
     private void btnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularActionPerformed
         double posInicial;
         double posFinal;
-        double tiempoInicial;
         double tiempoFinal;
-        double aceleracion;
+        double tiempoInicial;
+        double velocidadInicial;
         try {
             posInicial = ml.convertirLongitud(Double.parseDouble(txtPosInicial.getText()),
                     cmbPosInicial.getSelectedItem().toString());
@@ -204,16 +210,15 @@ public class FormulaTres extends javax.swing.JPanel {
                 cmbTiempoInicial.getSelectedItem().toString());
             tiempoFinal = mt.convertirTiempo(Double.parseDouble(txtTiempoFinal.getText()),
                 cmbTiempoFinal.getSelectedItem().toString());
-            aceleracion = Double.parseDouble(txtAceleracion.getText());
-            mrua = new ControladorMovRecUniAce(tiempoInicial, tiempoFinal, posInicial, posFinal, aceleracion, 0, 0);
+            velocidadInicial = mv.convertirVelocidad(Double.parseDouble(txtVelocidadInicial.getText()),
+                    cmbVelocidadInicial.getSelectedItem().toString());
+            mrua = new ControladorMovRecUniAce(tiempoInicial, tiempoFinal, posInicial, posFinal, 0, velocidadInicial, 0);
             //------ Mostrar cálculos -----//
-            if (tiempoFinal > tiempoInicial){
                 JOptionPane.showMessageDialog(this,
-                    "Distancia calculada. \n" + mrua.calcularVelocidadInicialFTres()+ " m/s");
-            }
+                        "Distancia calculada. \n" + mrua.calcularAceleracionFDos()+ " m/s²");
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this,
-                "Debe rellenar todos los campos para continuar.");
+                    "Debe rellenar todos los campos para continuar.");
         }
     }//GEN-LAST:event_btnCalcularActionPerformed
 
@@ -225,25 +230,29 @@ public class FormulaTres extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtPosFinalActionPerformed
 
+    private void txtVelocidadInicialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtVelocidadInicialActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtVelocidadInicialActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCalcular;
     private javax.swing.JButton btnLimpiar;
-    private javax.swing.JComboBox<String> cmbAceleracion;
     private javax.swing.JComboBox<String> cmbPosFinal;
     private javax.swing.JComboBox<String> cmbPosInicial;
     private javax.swing.JComboBox<String> cmbTiempoFinal;
     private javax.swing.JComboBox<String> cmbTiempoInicial;
+    private javax.swing.JComboBox<String> cmbVelocidadInicial;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JTextField txtAceleracion;
     private javax.swing.JTextField txtPosFinal;
     private javax.swing.JTextField txtPosInicial;
     private javax.swing.JTextField txtTiempoFinal;
     private javax.swing.JTextField txtTiempoInicial;
+    private javax.swing.JTextField txtVelocidadInicial;
     // End of variables declaration//GEN-END:variables
 }

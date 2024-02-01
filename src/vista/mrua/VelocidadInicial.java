@@ -4,8 +4,6 @@ import controlador.VisualizarFormula;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import javax.swing.ImageIcon;
-import vista.mrua.velocidadInicial.FormulaDos;
-import vista.mrua.velocidadInicial.FormulaTres;
 
 public class VelocidadInicial extends javax.swing.JPanel {
 
@@ -13,9 +11,9 @@ public class VelocidadInicial extends javax.swing.JPanel {
         initComponents();
         vf = new VisualizarFormula("v_i = v_f - a * t");
         labelFUno.setIcon(vf.getIconTitulos());
-        vf = new VisualizarFormula("v_i = 2 * \\frac {d}{t}-v_f");
+        vf = new VisualizarFormula("v_i = 2 * \\frac {x}{t}-v_f");
         labelFDos.setIcon(vf.getIconTitulos());
-        vf = new VisualizarFormula("v_i = \\frac{d}{t}-\\frac{1}{2}*a*t");
+        vf = new VisualizarFormula("v_i = \\frac{x}{t}-\\frac{1}{2}*a*t");
         labelFTres.setIcon(vf.getIconTitulos());
         seleccionFUno();
         mostrarFUno();
@@ -211,7 +209,7 @@ public class VelocidadInicial extends javax.swing.JPanel {
     }
     
     public void mostrarFDos() {
-        vista.mrua.velocidadInicial.FormulaDos vista = new FormulaDos();
+        vista.mrua.velocidadInicial.FormulaDos vista = new vista.mrua.velocidadInicial.FormulaDos();
         vista.setSize(860, 470);
         vista.setLocation(0, 0);
         bg.removeAll();
@@ -221,7 +219,7 @@ public class VelocidadInicial extends javax.swing.JPanel {
     }
     
     public void mostrarFTres() {
-        vista.mrua.velocidadInicial.FormulaTres vista = new FormulaTres();
+        vista.mrua.velocidadInicial.FormulaTres vista = new vista.mrua.velocidadInicial.FormulaTres();
         vista.setSize(860, 470);
         vista.setLocation(0, 0);
         bg.removeAll();

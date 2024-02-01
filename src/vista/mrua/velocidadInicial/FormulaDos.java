@@ -194,9 +194,9 @@ public class FormulaDos extends javax.swing.JPanel {
     private void btnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularActionPerformed
         double posInicial;
         double posFinal;
-        double velocidadFinal;
-        double tiempoFinal;
         double tiempoInicial;
+        double tiempoFinal;
+        double velocidadFinal;
         try {
             posInicial = ml.convertirLongitud(Double.parseDouble(txtPosInicial.getText()),
                     cmbPosInicial.getSelectedItem().toString());

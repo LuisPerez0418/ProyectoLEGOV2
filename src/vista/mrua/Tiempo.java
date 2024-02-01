@@ -4,7 +4,6 @@ import controlador.VisualizarFormula;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import javax.swing.ImageIcon;
-import vista.mrua.distancia.FormulaUno;
 
 public class Tiempo extends javax.swing.JPanel {
 
@@ -12,10 +11,8 @@ public class Tiempo extends javax.swing.JPanel {
         initComponents(); 
         vf = new VisualizarFormula("t = \\frac{v_f-v_i}{a}");
         labelFUno.setIcon(vf.getIconTitulos());
-        vf = new VisualizarFormula("t = \\frac{2*d}{v_i+v_f}");
+        vf = new VisualizarFormula("t = \\frac{2*x}{v_i+v_f}");
         labelFDos.setIcon(vf.getIconTitulos());
-        vf = new VisualizarFormula("t = xd");
-        labelFTres.setIcon(vf.getIconTitulos());
         seleccionFUno();
         mostrarFUno();
     }
@@ -38,9 +35,6 @@ public class Tiempo extends javax.swing.JPanel {
         btnFDos = new javax.swing.JPanel();
         labelFDos = new javax.swing.JLabel();
         bgFDos = new javax.swing.JLabel();
-        btnFTres = new javax.swing.JPanel();
-        labelFTres = new javax.swing.JLabel();
-        bgFTres = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         bg = new javax.swing.JPanel();
@@ -74,7 +68,7 @@ public class Tiempo extends javax.swing.JPanel {
         bgFUno.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/utiliarios/seleccionFormulaSinColor.png"))); // NOI18N
         btnFUno.add(bgFUno, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
-        header.add(btnFUno, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 20, 150, 40));
+        header.add(btnFUno, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 20, 150, 40));
 
         btnFDos.setBackground(new java.awt.Color(231, 231, 231));
         btnFDos.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -96,29 +90,7 @@ public class Tiempo extends javax.swing.JPanel {
         bgFDos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/utiliarios/seleccionFormulaSinColor.png"))); // NOI18N
         btnFDos.add(bgFDos, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
-        header.add(btnFDos, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 20, 150, 40));
-
-        btnFTres.setBackground(new java.awt.Color(231, 231, 231));
-        btnFTres.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btnFTresMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                btnFTresMouseExited(evt);
-            }
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                btnFTresMousePressed(evt);
-            }
-        });
-        btnFTres.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        labelFTres.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        btnFTres.add(labelFTres, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 150, 40));
-
-        bgFTres.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/utiliarios/seleccionFormulaSinColor.png"))); // NOI18N
-        btnFTres.add(bgFTres, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
-
-        header.add(btnFTres, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 20, 150, 40));
+        header.add(btnFDos, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 20, 150, 40));
 
         jLabel2.setFont(new java.awt.Font("Montserrat", 1, 23)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 0, 0));
@@ -150,8 +122,7 @@ public class Tiempo extends javax.swing.JPanel {
     }//GEN-LAST:event_btnFUnoMouseEntered
 
     private void btnFUnoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnFUnoMouseExited
-        if (labelFDos.getForeground().getRGB() != numLetrasBase
-                || labelFTres.getForeground().getRGB() != numLetrasBase)
+        if (labelFDos.getForeground().getRGB() != numLetrasBase)
             resetearFUno();
     }//GEN-LAST:event_btnFUnoMouseExited
 
@@ -168,39 +139,30 @@ public class Tiempo extends javax.swing.JPanel {
     }//GEN-LAST:event_btnFDosMouseEntered
 
     private void btnFDosMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnFDosMouseExited
-        if (labelFUno.getForeground().getRGB() != numLetrasBase
-                || labelFTres.getForeground().getRGB() != numLetrasBase)
+        if (labelFUno.getForeground().getRGB() != numLetrasBase)
             resetearFDos();
     }//GEN-LAST:event_btnFDosMouseExited
 
     private void btnFDosMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnFDosMousePressed
-        mostrarFUno();
+        mostrarFDos();
         //----- Colorear y descolorear botones -----//
         resetearTodo();
         seleccionFDos();
     }//GEN-LAST:event_btnFDosMousePressed
 
-    private void btnFTresMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnFTresMouseEntered
-        if (labelFTres.getForeground().getRGB() == numLetrasBase)
-            seleccionFTres();
-    }//GEN-LAST:event_btnFTresMouseEntered
-
-    private void btnFTresMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnFTresMouseExited
-        if (labelFUno.getForeground().getRGB() != numLetrasBase
-                || labelFDos.getForeground().getRGB() != numLetrasBase)
-            resetearFTres();
-    }//GEN-LAST:event_btnFTresMouseExited
-
-    private void btnFTresMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnFTresMousePressed
-        mostrarFUno();
-        //----- Colorear y descolorear botones -----//
-        resetearTodo();
-        seleccionFTres();
-    }//GEN-LAST:event_btnFTresMousePressed
-
     //----- Rellenar paneles ------//
     public void mostrarFUno() {
-        vista.mrua.distancia.FormulaUno vista = new FormulaUno();
+        vista.mrua.tiempo.FormulaUno vista = new vista.mrua.tiempo.FormulaUno();
+        vista.setSize(860, 470);
+        vista.setLocation(0, 0);
+        bg.removeAll();
+        bg.add(vista, BorderLayout.CENTER);
+        bg.revalidate();
+        bg.repaint();
+    }
+    
+    public void mostrarFDos() {
+        vista.mrua.tiempo.FormulaDos vista = new vista.mrua.tiempo.FormulaDos();
         vista.setSize(860, 470);
         vista.setLocation(0, 0);
         bg.removeAll();
@@ -231,38 +193,25 @@ public class Tiempo extends javax.swing.JPanel {
         labelFDos.setForeground(letrasBase);
     }
 
-    private void seleccionFTres() {
-        bgFTres.setIcon(new ImageIcon(getClass().getResource("/imagenes/utiliarios/seleccionFormulaColor.png")));
-        labelFTres.setForeground(letrasAlternativo);
-    }
-
-    private void resetearFTres() {
-        bgFTres.setIcon(new ImageIcon(getClass().getResource("/imagenes/utiliarios/seleccionFormulaSinColor.png")));
-        labelFTres.setForeground(letrasBase);
-    }
     //----- Fin de las variaciones ------//
 
     //----- Métodos de utilidad -----//
     private void resetearTodo() {
         resetearFUno();
         resetearFDos();
-        resetearFTres();
     }
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel bg;
     private javax.swing.JLabel bgFDos;
-    private javax.swing.JLabel bgFTres;
     private javax.swing.JLabel bgFUno;
     private javax.swing.JPanel btnFDos;
-    private javax.swing.JPanel btnFTres;
     private javax.swing.JPanel btnFUno;
     private javax.swing.JPanel header;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel labelFDos;
-    private javax.swing.JLabel labelFTres;
     private javax.swing.JLabel labelFUno;
     // End of variables declaration//GEN-END:variables
 }
