@@ -4,19 +4,17 @@ import controlador.VisualizarFormula;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import javax.swing.ImageIcon;
-import vista.mrua.distancia.FormulaDos;
-import vista.mrua.distancia.FormulaTres;
 import vista.mrua.distancia.FormulaUno;
 
-public class Distancia extends javax.swing.JPanel {
+public class Aceleracion extends javax.swing.JPanel {
 
-    public Distancia() {
+    public Aceleracion() {
         initComponents(); 
-        vf = new VisualizarFormula("x = v_i * t \\frac {1}{2} * a * t^2");
+        vf = new VisualizarFormula("a = \\frac{v_f-v_i}{t}-v_i");
         labelFUno.setIcon(vf.getIconTitulos());
-        vf = new VisualizarFormula("x = \\frac {v_i+v_f}{2}*t");
+        vf = new VisualizarFormula("a = \\frac{d-(v_i*t)}{\\frac{1}{2}*t^2}");
         labelFDos.setIcon(vf.getIconTitulos());
-        vf = new VisualizarFormula("x = \\frac{v_f^2-v_i^2}{2*a}");
+        vf = new VisualizarFormula("a = \\frac{v_f^2-v_i^2}{2*d}");
         labelFTres.setIcon(vf.getIconTitulos());
         seleccionFUno();
         mostrarFUno();
@@ -176,7 +174,7 @@ public class Distancia extends javax.swing.JPanel {
     }//GEN-LAST:event_btnFDosMouseExited
 
     private void btnFDosMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnFDosMousePressed
-        mostrarFDos();
+        mostrarFUno();
         //----- Colorear y descolorear botones -----//
         resetearTodo();
         seleccionFDos();
@@ -194,7 +192,7 @@ public class Distancia extends javax.swing.JPanel {
     }//GEN-LAST:event_btnFTresMouseExited
 
     private void btnFTresMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnFTresMousePressed
-        mostrarFTres();
+        mostrarFUno();
         //----- Colorear y descolorear botones -----//
         resetearTodo();
         seleccionFTres();
@@ -210,28 +208,8 @@ public class Distancia extends javax.swing.JPanel {
         bg.revalidate();
         bg.repaint();
     }
-    
-    public void mostrarFDos() {
-        vista.mrua.distancia.FormulaDos vista = new FormulaDos();
-        vista.setSize(860, 470);
-        vista.setLocation(0, 0);
-        bg.removeAll();
-        bg.add(vista, BorderLayout.CENTER);
-        bg.revalidate();
-        bg.repaint();
-    }
-    
-    public void mostrarFTres() {
-        vista.mrua.distancia.FormulaTres vista = new FormulaTres();
-        vista.setSize(860, 470);
-        vista.setLocation(0, 0);
-        bg.removeAll();
-        bg.add(vista, BorderLayout.CENTER);
-        bg.revalidate();
-        bg.repaint();
-    }
+
     //----- Fin del relleno ------//
-    
     //----- Variaciones al entrar y salir el mouse ------//
     private void seleccionFUno() {
         bgFUno.setIcon(new ImageIcon(getClass().getResource("/imagenes/utiliarios/seleccionFormulaColor.png")));

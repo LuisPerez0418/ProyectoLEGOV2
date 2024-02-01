@@ -3,8 +3,9 @@ package vista;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import javax.swing.ImageIcon;
-import vista.mru.Tiempo;
-import vista.mru.Velocidad;
+import vista.mrua.Aceleracion;
+import vista.mrua.VelocidadFinal;
+import vista.mrua.VelocidadInicial;
 
 public class vistaMRUA extends javax.swing.JPanel {
 
@@ -258,7 +259,7 @@ public class vistaMRUA extends javax.swing.JPanel {
     }//GEN-LAST:event_btnVelocidadInicialMouseExited
 
     private void btnVelocidadInicialMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnVelocidadInicialMousePressed
-        mostrarVelocidadFinal();
+        mostrarVelocidadInicial();
         //----- Colorear y descolorear botones -----//
         resetearTodo();
         seleccionVelocidadInicial();
@@ -346,7 +347,7 @@ public class vistaMRUA extends javax.swing.JPanel {
 
     //----- Rellenar paneles ------//
     private void mostrarVelocidadInicial() {
-        Velocidad vista = new Velocidad();
+        vista.mrua.VelocidadInicial vista = new VelocidadInicial();
         vista.setSize(720, 470);
         vista.setLocation(0, 0);
         contenido.removeAll();
@@ -356,7 +357,7 @@ public class vistaMRUA extends javax.swing.JPanel {
     }
     
     private void mostrarVelocidadFinal() {
-        Velocidad vista = new Velocidad();
+        vista.mrua.VelocidadFinal vista = new VelocidadFinal();
         vista.setSize(720, 470);
         vista.setLocation(0, 0);
         contenido.removeAll();
@@ -376,7 +377,7 @@ public class vistaMRUA extends javax.swing.JPanel {
     }
 
     private void mostrarTiempo() {
-        Tiempo vista = new Tiempo();
+        vista.mrua.Tiempo vista = new vista.mrua.Tiempo();
         vista.setSize(720, 470);
         vista.setLocation(0, 0);
         contenido.removeAll();
@@ -386,7 +387,7 @@ public class vistaMRUA extends javax.swing.JPanel {
     }
     
     private void mostrarAceleracion() {
-        Tiempo vista = new Tiempo();
+        vista.mrua.Aceleracion vista = new Aceleracion();
         vista.setSize(720, 470);
         vista.setLocation(0, 0);
         contenido.removeAll();

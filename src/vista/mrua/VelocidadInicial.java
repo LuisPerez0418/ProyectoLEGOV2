@@ -4,19 +4,18 @@ import controlador.VisualizarFormula;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import javax.swing.ImageIcon;
-import vista.mrua.distancia.FormulaDos;
-import vista.mrua.distancia.FormulaTres;
-import vista.mrua.distancia.FormulaUno;
+import vista.mrua.velocidadInicial.FormulaDos;
+import vista.mrua.velocidadInicial.FormulaTres;
 
-public class Distancia extends javax.swing.JPanel {
+public class VelocidadInicial extends javax.swing.JPanel {
 
-    public Distancia() {
-        initComponents(); 
-        vf = new VisualizarFormula("x = v_i * t \\frac {1}{2} * a * t^2");
+    public VelocidadInicial() {
+        initComponents();
+        vf = new VisualizarFormula("v_i = v_f - a * t");
         labelFUno.setIcon(vf.getIconTitulos());
-        vf = new VisualizarFormula("x = \\frac {v_i+v_f}{2}*t");
+        vf = new VisualizarFormula("v_i = 2 * \\frac {d}{t}-v_f");
         labelFDos.setIcon(vf.getIconTitulos());
-        vf = new VisualizarFormula("x = \\frac{v_f^2-v_i^2}{2*a}");
+        vf = new VisualizarFormula("v_i = \\frac{d}{t}-\\frac{1}{2}*a*t");
         labelFTres.setIcon(vf.getIconTitulos());
         seleccionFUno();
         mostrarFUno();
@@ -202,7 +201,7 @@ public class Distancia extends javax.swing.JPanel {
 
     //----- Rellenar paneles ------//
     public void mostrarFUno() {
-        vista.mrua.distancia.FormulaUno vista = new FormulaUno();
+        vista.mrua.velocidadInicial.FormulaUno vista = new vista.mrua.velocidadInicial.FormulaUno();
         vista.setSize(860, 470);
         vista.setLocation(0, 0);
         bg.removeAll();
@@ -212,7 +211,7 @@ public class Distancia extends javax.swing.JPanel {
     }
     
     public void mostrarFDos() {
-        vista.mrua.distancia.FormulaDos vista = new FormulaDos();
+        vista.mrua.velocidadInicial.FormulaDos vista = new FormulaDos();
         vista.setSize(860, 470);
         vista.setLocation(0, 0);
         bg.removeAll();
@@ -222,7 +221,7 @@ public class Distancia extends javax.swing.JPanel {
     }
     
     public void mostrarFTres() {
-        vista.mrua.distancia.FormulaTres vista = new FormulaTres();
+        vista.mrua.velocidadInicial.FormulaTres vista = new FormulaTres();
         vista.setSize(860, 470);
         vista.setLocation(0, 0);
         bg.removeAll();
