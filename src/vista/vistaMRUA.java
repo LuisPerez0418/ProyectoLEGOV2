@@ -3,9 +3,6 @@ package vista;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import javax.swing.ImageIcon;
-import vista.mrua.Aceleracion;
-import vista.mrua.VelocidadFinal;
-import vista.mrua.VelocidadInicial;
 
 public class vistaMRUA extends javax.swing.JPanel {
 
@@ -347,7 +344,7 @@ public class vistaMRUA extends javax.swing.JPanel {
 
     //----- Rellenar paneles ------//
     private void mostrarVelocidadInicial() {
-        vista.mrua.VelocidadInicial vista = new VelocidadInicial();
+        vista.mrua.VelocidadInicial vista = new vista.mrua.VelocidadInicial();
         vista.setSize(720, 470);
         vista.setLocation(0, 0);
         contenido.removeAll();
@@ -357,7 +354,7 @@ public class vistaMRUA extends javax.swing.JPanel {
     }
     
     private void mostrarVelocidadFinal() {
-        vista.mrua.VelocidadFinal vista = new VelocidadFinal();
+        vista.mrua.VelocidadFinal vista = new vista.mrua.VelocidadFinal();
         vista.setSize(720, 470);
         vista.setLocation(0, 0);
         contenido.removeAll();
@@ -387,7 +384,7 @@ public class vistaMRUA extends javax.swing.JPanel {
     }
     
     private void mostrarAceleracion() {
-        vista.mrua.Aceleracion vista = new Aceleracion();
+        vista.mrua.Aceleracion vista = new vista.mrua.Aceleracion();
         vista.setSize(720, 470);
         vista.setLocation(0, 0);
         contenido.removeAll();

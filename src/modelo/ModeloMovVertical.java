@@ -9,21 +9,6 @@ public class ModeloMovVertical {
     private double tiempoCaida;
     private double gravedad;
 
-    public void ModeloCaidaLibre() {
-
-    }
-
-    public void ModeloCaidaLibre(double velocidadInicial,
-            double velocidadFinal, double altura, double tiempo,
-            double tiempoDCaida, double gravedad) {
-        setVelocidadInicial(velocidadInicial);
-        setVelocidadFinal(velocidadFinal);
-        setAltura(altura);
-        setTiempo(tiempo);
-        setTiempoCaida(tiempoDCaida);
-        setGravedad(gravedad);
-    }
-
     //----- Métodos setters and getters -----//
     public double getVelocidadInicial() {
         return velocidadInicial;
@@ -71,21 +56,6 @@ public class ModeloMovVertical {
 
     public void setGravedad(double gravedad) {
         this.gravedad = gravedad;
-    }
-
-    //----- Métodos para calcular -----//
-    public double calcularAltura() {
-        return (getVelocidadFinal() / 2) * getTiempo();
-
-    }
-
-    public double calcularVelocidadFinal() {
-        return getGravedad() * getTiempo();
-
-    }
-
-    public double calcularTiempoDeCaida() {
-        return Math.sqrt(2 * getAltura() / getGravedad());
     }
 
 }

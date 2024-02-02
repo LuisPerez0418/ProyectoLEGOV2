@@ -3,9 +3,6 @@ package vista;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import javax.swing.ImageIcon;
-import vista.mru.Distancia;
-import vista.mru.Tiempo;
-import vista.mru.Velocidad;
 
 public class vistaMRU extends javax.swing.JPanel {
 
@@ -218,7 +215,7 @@ public class vistaMRU extends javax.swing.JPanel {
 
     //----- Rellenar paneles ------//
     private void mostrarVelocidad() {
-        Velocidad vista = new Velocidad();
+        vista.mru.Velocidad vista = new vista.mru.Velocidad();
         vista.setSize(720, 470);
         vista.setLocation(0, 0);
         contenido.removeAll();
@@ -228,7 +225,7 @@ public class vistaMRU extends javax.swing.JPanel {
     }
 
     private void mostrarDistancia() {
-        Distancia vista = new Distancia();
+        vista.mru.Distancia vista = new vista.mru.Distancia();
         vista.setSize(720, 470);
         vista.setLocation(0, 0);
         contenido.removeAll();
@@ -238,7 +235,7 @@ public class vistaMRU extends javax.swing.JPanel {
     }
 
     private void mostrarTiempo() {
-        Tiempo vista = new Tiempo();
+        vista.mru.Tiempo vista = new vista.mru.Tiempo();
         vista.setSize(720, 470);
         vista.setLocation(0, 0);
         contenido.removeAll();
