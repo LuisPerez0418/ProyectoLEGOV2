@@ -73,7 +73,7 @@ public class ControladorMovRecUniAce extends modelo.ModeloMovHorizontal {
     }
 
     public double calcularTiempoFDos() {
-        return (2 * getPosicion()) / (getVelocidadFinal() - getVelocidadInicial());
+        return (2 * getPosicion()) / (getVelocidadFinal() + getVelocidadInicial());
     }
 
     //----- Aceleración ------//

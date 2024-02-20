@@ -12,9 +12,6 @@ public class ModeloMovParabolico {
     private double posicionInicialEnY ;
     private double angulo ;
 
-    public ModeloMovParabolico() {
-    }
-
     //----- Métodos getters y setters-----//
     public double getVelocidadInicial() {
         return velocidadInicial;

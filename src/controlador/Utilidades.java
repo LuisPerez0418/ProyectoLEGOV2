@@ -1,11 +1,15 @@
 package controlador;
 
+import java.awt.Color;
 import java.awt.Component;
 import java.awt.Container;
 import javax.swing.JTextField;
 
 public class Utilidades {
 
+    Color letrasBase = new Color(0, 0, 0);
+    Color letrasAlternativo = new Color(1, 1, 1);
+    
     /* Método para limpiar todos los jTextField en un panel */
     public void limpiarCampos(Container container) {
         Component[] components = container.getComponents();
@@ -23,4 +27,5 @@ public class Utilidades {
             campo.setText("0");
         }
     }
+
 }
