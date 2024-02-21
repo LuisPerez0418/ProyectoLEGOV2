@@ -11,7 +11,7 @@ public class VelocidadInicial extends javax.swing.JPanel {
         initComponents(); 
         vf = new VisualizarFormula("v_i = v_f * g *t");
         labelFUno.setIcon(vf.getIconTitulos());
-        vf = new VisualizarFormula("v_i = 2 * \\frac{1}{2} * g *t");
+        vf = new VisualizarFormula("v_i = 2 * \\frac{h}{t} * g *h");
         labelFDos.setIcon(vf.getIconTitulos());
         vf = new VisualizarFormula("v_i = \\frac{h}{t} + \\frac{1}{2} * g * t");
         labelFTres.setIcon(vf.getIconTitulos());
