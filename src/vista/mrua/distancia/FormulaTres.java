@@ -10,6 +10,7 @@ public class FormulaTres extends javax.swing.JPanel {
 
     public FormulaTres() {
         initComponents();
+        rellenarCombo();
     }
 
     private ControladorMovRecUniAce mrua = new ControladorMovRecUniAce();
@@ -57,7 +58,6 @@ public class FormulaTres extends javax.swing.JPanel {
         cmbVelocidadInicial.setBackground(new java.awt.Color(255, 255, 255));
         cmbVelocidadInicial.setFont(new java.awt.Font("Montserrat Medium", 0, 12)); // NOI18N
         cmbVelocidadInicial.setForeground(new java.awt.Color(0, 0, 0));
-        cmbVelocidadInicial.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "m/s", "km/h", "mi/h" }));
         cmbVelocidadInicial.setBorder(null);
         add(cmbVelocidadInicial, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 110, 73, 32));
 
@@ -76,7 +76,6 @@ public class FormulaTres extends javax.swing.JPanel {
         cmbVelocidadFinal.setBackground(new java.awt.Color(255, 255, 255));
         cmbVelocidadFinal.setFont(new java.awt.Font("Montserrat Medium", 0, 12)); // NOI18N
         cmbVelocidadFinal.setForeground(new java.awt.Color(0, 0, 0));
-        cmbVelocidadFinal.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "m/s", "km/h", "mi/h" }));
         cmbVelocidadFinal.setBorder(null);
         add(cmbVelocidadFinal, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 110, 73, 32));
 
@@ -132,7 +131,6 @@ public class FormulaTres extends javax.swing.JPanel {
         cmbPosicionInicial.setBackground(new java.awt.Color(255, 255, 255));
         cmbPosicionInicial.setFont(new java.awt.Font("Montserrat Medium", 0, 12)); // NOI18N
         cmbPosicionInicial.setForeground(new java.awt.Color(0, 0, 0));
-        cmbPosicionInicial.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "cm", "m", "km", "mi" }));
         cmbPosicionInicial.setBorder(null);
         add(cmbPosicionInicial, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 190, 73, 32));
 
@@ -162,23 +160,28 @@ public class FormulaTres extends javax.swing.JPanel {
         double posInicial;
         try {
             velocidadInicial = mv.convertirVelocidad(Double.parseDouble(txtVelocidadInicial.getText()),
-                cmbVelocidadInicial.getSelectedItem().toString());
+                    cmbVelocidadInicial.getSelectedItem().toString());
             velocidadFinal = mv.convertirVelocidad(Double.parseDouble(txtVelocidadFinal.getText()),
-                cmbVelocidadFinal.getSelectedItem().toString());
+                    cmbVelocidadFinal.getSelectedItem().toString());
             aceleracion = Double.parseDouble(txtAceleracion.getText());
             posInicial = ml.convertirLongitud(Double.parseDouble(txtPosicionInicial.getText()),
-                cmbPosicionInicial.getSelectedItem().toString());
+                    cmbPosicionInicial.getSelectedItem().toString());
             mrua = new ControladorMovRecUniAce(0, 0, posInicial, 0, aceleracion, velocidadInicial, velocidadFinal);
             //------ Mostrar cálculos -----//
-                JOptionPane.showMessageDialog(this,
-                    "Distancia calculada. \n" + mrua.calcularDistanciaFTres()+ " m");
+            JOptionPane.showMessageDialog(this,
+                    "Distancia calculada. \n" + mrua.calcularDistanciaFTres() + " m");
 
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this,
-                "Debe rellenar todos los campos para continuar.");
+                    "Debe rellenar todos los campos para continuar.");
         }
     }//GEN-LAST:event_btnCalcularActionPerformed
 
+    private void rellenarCombo() {
+        ml.rellenarCombo(cmbPosicionInicial);
+        mv.rellenarCombo(cmbVelocidadInicial);
+        mv.rellenarCombo(cmbVelocidadFinal);
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCalcular;

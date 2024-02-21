@@ -14,7 +14,6 @@ public class VelocidadInicial extends javax.swing.JPanel {
         vf = new VisualizarFormula("v_i = 2 * \\frac{h}{t} - v_f");
         labelFDos.setIcon(vf.getIconTitulos());
         vf = new VisualizarFormula("v_i = \\frac{h}{t} - \\frac{1}{2} * g * t");
-        labelFTres.setIcon(vf.getIconTitulos());
         seleccionFUno();
         mostrarFUno();
     }
@@ -199,14 +198,13 @@ public class VelocidadInicial extends javax.swing.JPanel {
 
     //----- Rellenar paneles ------//
     public void mostrarFUno() {
-      /*  vista.mrua.aceleracion.FormulaUno vista = new vista.mrua.aceleracion.FormulaUno();
+        /*vista.caidaLibre.velocidadInicial.FormulaUno vista = new vista.caidaLibre.velocidadInicial.FormulaUno();
         vista.setSize(860, 470);
         vista.setLocation(0, 0);
         bg.removeAll();
         bg.add(vista, BorderLayout.CENTER);
         bg.revalidate();
-        bg.repaint();
-        */
+        bg.repaint();*/
     }
     
     public void mostrarFDos() {

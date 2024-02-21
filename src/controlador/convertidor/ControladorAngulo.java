@@ -1,5 +1,7 @@
 package controlador.convertidor;
 
+import javax.swing.JComboBox;
+
 public class ControladorAngulo {
 
     //----- Métodos de conversión -----//

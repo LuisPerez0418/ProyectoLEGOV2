@@ -11,6 +11,7 @@ public class FormulaUno extends javax.swing.JPanel {
 
     public FormulaUno() {
         initComponents();
+        rellenarCombo();
     }
 
     private ControladorMovRecUniAce mrua = new ControladorMovRecUniAce();
@@ -62,7 +63,6 @@ public class FormulaUno extends javax.swing.JPanel {
         cmbTiempoFinal.setBackground(new java.awt.Color(255, 255, 255));
         cmbTiempoFinal.setFont(new java.awt.Font("Montserrat Medium", 0, 12)); // NOI18N
         cmbTiempoFinal.setForeground(new java.awt.Color(0, 0, 0));
-        cmbTiempoFinal.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "s", "min", "h" }));
         cmbTiempoFinal.setBorder(null);
         add(cmbTiempoFinal, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 180, 73, 32));
 
@@ -75,7 +75,6 @@ public class FormulaUno extends javax.swing.JPanel {
         cmbPosicionInicial.setBackground(new java.awt.Color(255, 255, 255));
         cmbPosicionInicial.setFont(new java.awt.Font("Montserrat Medium", 0, 12)); // NOI18N
         cmbPosicionInicial.setForeground(new java.awt.Color(0, 0, 0));
-        cmbPosicionInicial.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "cm", "m", "km", "mi" }));
         cmbPosicionInicial.setBorder(null);
         add(cmbPosicionInicial, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 110, 73, 32));
 
@@ -101,7 +100,6 @@ public class FormulaUno extends javax.swing.JPanel {
         cmbVelocidadInicial.setBackground(new java.awt.Color(255, 255, 255));
         cmbVelocidadInicial.setFont(new java.awt.Font("Montserrat Medium", 0, 12)); // NOI18N
         cmbVelocidadInicial.setForeground(new java.awt.Color(0, 0, 0));
-        cmbVelocidadInicial.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "m/s", "km/h", "mi/h" }));
         cmbVelocidadInicial.setBorder(null);
         add(cmbVelocidadInicial, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 110, 73, 32));
 
@@ -121,7 +119,6 @@ public class FormulaUno extends javax.swing.JPanel {
         cmbTiempoInicial.setBackground(new java.awt.Color(255, 255, 255));
         cmbTiempoInicial.setFont(new java.awt.Font("Montserrat Medium", 0, 12)); // NOI18N
         cmbTiempoInicial.setForeground(new java.awt.Color(0, 0, 0));
-        cmbTiempoInicial.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "s", "min", "h" }));
         cmbTiempoInicial.setBorder(null);
         add(cmbTiempoInicial, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 180, 73, 32));
 
@@ -189,26 +186,31 @@ public class FormulaUno extends javax.swing.JPanel {
         double aceleracion;
         try {
             posInicial = ml.convertirLongitud(Double.parseDouble(txtPosicionInicial.getText()),
-                cmbPosicionInicial.getSelectedItem().toString());
+                    cmbPosicionInicial.getSelectedItem().toString());
             velocidadInicial = mv.convertirVelocidad(Double.parseDouble(txtVelocidadInicial.getText()),
-                cmbVelocidadInicial.getSelectedItem().toString());
+                    cmbVelocidadInicial.getSelectedItem().toString());
             tiempoInicial = mt.convertirTiempo(Double.parseDouble(txtTiempoInicial.getText()),
-                cmbTiempoInicial.getSelectedItem().toString());
+                    cmbTiempoInicial.getSelectedItem().toString());
             tiempoFinal = mt.convertirTiempo(Double.parseDouble(txtTiempoFinal.getText()),
-                cmbTiempoFinal.getSelectedItem().toString());
+                    cmbTiempoFinal.getSelectedItem().toString());
             aceleracion = Double.parseDouble(txtAceleracion.getText());
             //------ Mostrar cálculos -----//
-            if (tiempoFinal > tiempoInicial){
+            if (tiempoFinal > tiempoInicial) {
                 JOptionPane.showMessageDialog(this,
-                    "Distancia calculada. \n" + mrua.calcularDistanciaFUno()+ " m");
+                        "Distancia calculada. \n" + mrua.calcularDistanciaFUno() + " m");
             }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this,
-                "Debe rellenar todos los campos para continuar.");
+                    "Debe rellenar todos los campos para continuar.");
         }
     }//GEN-LAST:event_btnCalcularActionPerformed
 
-
+    private void rellenarCombo() {
+        ml.rellenarCombo(cmbPosicionInicial);
+        mt.rellenarCombo(cmbTiempoInicial);
+        mt.rellenarCombo(cmbTiempoFinal);
+        mv.rellenarCombo(cmbVelocidadInicial);
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCalcular;
     private javax.swing.JButton btnLimpiar;

@@ -10,6 +10,7 @@ public class FormulaDos extends javax.swing.JPanel {
 
     public FormulaDos() {
         initComponents();
+        rellenarCombo();
     }
 
     private ControladorMovRecUniAce mrua = new ControladorMovRecUniAce();
@@ -87,7 +88,6 @@ public class FormulaDos extends javax.swing.JPanel {
         cmbPosInicial.setBackground(new java.awt.Color(255, 255, 255));
         cmbPosInicial.setFont(new java.awt.Font("Montserrat Medium", 0, 12)); // NOI18N
         cmbPosInicial.setForeground(new java.awt.Color(0, 0, 0));
-        cmbPosInicial.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "cm", "m", "km", "mi", " " }));
         cmbPosInicial.setBorder(null);
         add(cmbPosInicial, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 110, 73, 32));
 
@@ -111,7 +111,6 @@ public class FormulaDos extends javax.swing.JPanel {
         cmbPosFinal.setBackground(new java.awt.Color(255, 255, 255));
         cmbPosFinal.setFont(new java.awt.Font("Montserrat Medium", 0, 12)); // NOI18N
         cmbPosFinal.setForeground(new java.awt.Color(0, 0, 0));
-        cmbPosFinal.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "cm", "m", "km", "mi", " " }));
         cmbPosFinal.setBorder(null);
         add(cmbPosFinal, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 110, 73, 32));
 
@@ -130,7 +129,6 @@ public class FormulaDos extends javax.swing.JPanel {
         cmbVelocidadInicial.setBackground(new java.awt.Color(255, 255, 255));
         cmbVelocidadInicial.setFont(new java.awt.Font("Montserrat Medium", 0, 12)); // NOI18N
         cmbVelocidadInicial.setForeground(new java.awt.Color(0, 0, 0));
-        cmbVelocidadInicial.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "m/s", "km/h", "mi/h" }));
         cmbVelocidadInicial.setBorder(null);
         add(cmbVelocidadInicial, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 190, 73, 32));
 
@@ -154,7 +152,6 @@ public class FormulaDos extends javax.swing.JPanel {
         cmbVelocidadFinal.setBackground(new java.awt.Color(255, 255, 255));
         cmbVelocidadFinal.setFont(new java.awt.Font("Montserrat Medium", 0, 12)); // NOI18N
         cmbVelocidadFinal.setForeground(new java.awt.Color(0, 0, 0));
-        cmbVelocidadFinal.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "m/s", "km/h", "mi/h" }));
         cmbVelocidadFinal.setBorder(null);
         add(cmbVelocidadFinal, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 190, 73, 32));
 
@@ -206,7 +203,13 @@ public class FormulaDos extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtVelocidadInicialActionPerformed
 
-
+    private void rellenarCombo(){
+	ml.rellenarCombo(cmbPosInicial);
+        ml.rellenarCombo(cmbPosFinal);
+        mv.rellenarCombo(cmbVelocidadInicial);
+        mv.rellenarCombo(cmbVelocidadFinal);
+    }   
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCalcular;
     private javax.swing.JButton btnLimpiar;

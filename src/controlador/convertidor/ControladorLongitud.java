@@ -1,5 +1,7 @@
 package controlador.convertidor;
 
+import javax.swing.JComboBox;
+
 public class ControladorLongitud {
 
     //----- Métodos de conversión -----//
@@ -34,7 +36,7 @@ public class ControladorLongitud {
         System.out.println(dato + " * 1609 = " + resultado);
     }
 
-    //----- método condicional sistema internacional -----//
+    //----- Método condicional sistema internacional -----//
     public double convertirLongitud(double dato, String unidad){
         return switch (unidad) {
             case "cm" -> centimetroMetro(dato);
@@ -42,6 +44,19 @@ public class ControladorLongitud {
             case "mi" -> millaMetro(dato); 
             default -> dato;
         };
+    }
+    
+    //-----  Método para rellenar los combobox -----//
+    public static void rellenarCombo(JComboBox<String> comboBox) {
+        /* Iniciar los datos */
+        String [] datos = {"cm", "m", "km", "mi"};
+        /* Limpiar el JComboBox */
+        comboBox.removeAllItems();
+
+        /* Rellenar el JComboBox con los elementos del vector */
+        for (String dato : datos) {
+            comboBox.addItem(dato);
+        }
     }
     
 }

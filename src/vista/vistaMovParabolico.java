@@ -520,7 +520,7 @@ public class vistaMovParabolico extends javax.swing.JPanel {
 
     //----- Rellenar paneles ------//
     private void mostrarVelocidadInicial() {
-        vista.MovParabolico.VelocidadInicial vista = new vista.MovParabolico.VelocidadInicial();
+        vista.movParabolico.VelocidadInicial vista = new vista.movParabolico.VelocidadInicial();
         vista.setSize(720, 470);
         vista.setLocation(0, 0);
         contenido.removeAll();
@@ -530,32 +530,75 @@ public class vistaMovParabolico extends javax.swing.JPanel {
     }
 
     private void mostrarVelocidadInicialX() {
-
+        vista.movParabolico.VelocidadInicialX vista = new vista.movParabolico.VelocidadInicialX();
+        vista.setSize(720, 470);
+        vista.setLocation(0, 0);
+        contenido.removeAll();
+        contenido.add(vista, BorderLayout.CENTER);
+        contenido.revalidate();
+        contenido.repaint();
     }
 
     private void mostrarVelocidadInicialY() {
-
+        vista.movParabolico.VelocidadInicialY vista = new vista.movParabolico.VelocidadInicialY();
+        vista.setSize(720, 470);
+        vista.setLocation(0, 0);
+        contenido.removeAll();
+        contenido.add(vista, BorderLayout.CENTER);
+        contenido.revalidate();
+        contenido.repaint();
     }
 
     private void mostrarAltura() {
-
+        vista.movParabolico.Altura vista = new vista.movParabolico.Altura();
+        vista.setSize(720, 470);
+        vista.setLocation(0, 0);
+        contenido.removeAll();
+        contenido.add(vista, BorderLayout.CENTER);
+        contenido.revalidate();
+        contenido.repaint();
     }
 
     private void mostrarDistancia() {
-
+        vista.movParabolico.Distancia vista = new vista.movParabolico.Distancia();
+        vista.setSize(720, 470);
+        vista.setLocation(0, 0);
+        contenido.removeAll();
+        contenido.add(vista, BorderLayout.CENTER);
+        contenido.revalidate();
+        contenido.repaint();
     }
 
     private void mostrarAlcHorizontal() {
-
+        vista.movParabolico.AlcanceHorizontal vista = new vista.movParabolico.AlcanceHorizontal();
+        vista.setSize(720, 470);
+        vista.setLocation(0, 0);
+        contenido.removeAll();
+        contenido.add(vista, BorderLayout.CENTER);
+        contenido.revalidate();
+        contenido.repaint();
     }
 
     private void mostrarTiempo() {
-
+        vista.movParabolico.Tiempo vista = new vista.movParabolico.Tiempo();
+        vista.setSize(720, 470);
+        vista.setLocation(0, 0);
+        contenido.removeAll();
+        contenido.add(vista, BorderLayout.CENTER);
+        contenido.revalidate();
+        contenido.repaint();
     }
 
     private void mostrarTiempoVuelo() {
-
+        vista.movParabolico.TiempoVuelo vista = new vista.movParabolico.TiempoVuelo();
+        vista.setSize(720, 470);
+        vista.setLocation(0, 0);
+        contenido.removeAll();
+        contenido.add(vista, BorderLayout.CENTER);
+        contenido.revalidate();
+        contenido.repaint();
     }
+    
     //----- Fin del relleno ------//
 
     //----- Variaciones al entrar y salir el mouse ------//

@@ -1,7 +1,6 @@
 package vista.tiroVertical.velocidadInicial;
 
 import controlador.Utilidades;
-import controlador.ControladorMovRecUniAce;
 import controlador.ControladorTiroVertical;
 import controlador.convertidor.ControladorTiempo;
 import controlador.convertidor.ControladorVelocidad;
@@ -11,6 +10,7 @@ public class FormulaUno extends javax.swing.JPanel {
 
     public FormulaUno() {
         initComponents();
+        rellenarCombo();
     }
     
     private ControladorTiroVertical tiro = new ControladorTiroVertical();
@@ -55,7 +55,6 @@ public class FormulaUno extends javax.swing.JPanel {
         cmbVelocidadFinal.setBackground(new java.awt.Color(255, 255, 255));
         cmbVelocidadFinal.setFont(new java.awt.Font("Montserrat Medium", 0, 12)); // NOI18N
         cmbVelocidadFinal.setForeground(new java.awt.Color(0, 0, 0));
-        cmbVelocidadFinal.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "m/s", "km/h", "mi/h" }));
         cmbVelocidadFinal.setBorder(null);
         add(cmbVelocidadFinal, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 110, 73, 32));
 
@@ -75,7 +74,6 @@ public class FormulaUno extends javax.swing.JPanel {
         cmbTiempo.setBackground(new java.awt.Color(255, 255, 255));
         cmbTiempo.setFont(new java.awt.Font("Montserrat Medium", 0, 12)); // NOI18N
         cmbTiempo.setForeground(new java.awt.Color(0, 0, 0));
-        cmbTiempo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "s", "min", "h" }));
         cmbTiempo.setBorder(null);
         add(cmbTiempo, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 180, 73, 32));
 
@@ -153,6 +151,10 @@ public class FormulaUno extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_btnCalcularActionPerformed
 
+     private void rellenarCombo(){
+        mt.rellenarCombo(cmbTiempo);
+        mv.rellenarCombo(cmbVelocidadFinal);
+    }   
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCalcular;

@@ -8,6 +8,7 @@ public class vistaTiroVertical extends javax.swing.JPanel {
 
     public vistaTiroVertical() {
         initComponents();
+        mostrarVelocidadInicial();
         seleccionVelocidadInicial();
     }
 

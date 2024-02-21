@@ -1,16 +1,16 @@
-package vista.tiroVertical.velocidadInicial;
+package vista.movParabolico;
 
+import vista.tiroVertical.velocidadInicial.*;
 import controlador.Utilidades;
 import controlador.ControladorTiroVertical;
 import controlador.convertidor.ControladorLongitud;
 import controlador.convertidor.ControladorTiempo;
 import javax.swing.JOptionPane;
 
-public class FormulaDos extends javax.swing.JPanel {
+public class AlcanceHorizontal extends javax.swing.JPanel {
 
-    public FormulaDos() {
+    public AlcanceHorizontal() {
         initComponents();
-        rellenarCombo();
     }
 
     private ControladorTiroVertical tiro = new ControladorTiroVertical();
@@ -55,6 +55,7 @@ public class FormulaDos extends javax.swing.JPanel {
         cmbAltura.setBackground(new java.awt.Color(255, 255, 255));
         cmbAltura.setFont(new java.awt.Font("Montserrat Medium", 0, 12)); // NOI18N
         cmbAltura.setForeground(new java.awt.Color(0, 0, 0));
+        cmbAltura.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "cm", "m", "km", "mi" }));
         cmbAltura.setBorder(null);
         add(cmbAltura, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 110, 73, 32));
 
@@ -74,6 +75,7 @@ public class FormulaDos extends javax.swing.JPanel {
         cmbTiempo.setBackground(new java.awt.Color(255, 255, 255));
         cmbTiempo.setFont(new java.awt.Font("Montserrat Medium", 0, 12)); // NOI18N
         cmbTiempo.setForeground(new java.awt.Color(0, 0, 0));
+        cmbTiempo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "s", "min", "h" }));
         cmbTiempo.setBorder(null);
         add(cmbTiempo, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 180, 73, 32));
 
@@ -151,10 +153,6 @@ public class FormulaDos extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_btnCalcularActionPerformed
 
-    private void rellenarCombo(){
-	ml.rellenarCombo(cmbAltura);
-        mt.rellenarCombo(cmbTiempo);
-    }   
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCalcular;

@@ -1,5 +1,7 @@
 package controlador.convertidor;
 
+import javax.swing.JComboBox;
+
 public class ControladorTiempo {
     
     public ControladorTiempo(){
@@ -35,6 +37,19 @@ public class ControladorTiempo {
             case "h" -> horaSegundo(dato);
             default -> dato;
         };
+    }
+    
+    //-----  Método para rellenar los combobox -----//
+    public static void rellenarCombo(JComboBox<String> comboBox) {
+        /* Iniciar los datos */
+        String [] datos = {"s", "min", "h"};
+        /* Limpiar el JComboBox */
+        comboBox.removeAllItems();
+
+        /* Rellenar el JComboBox con los elementos del vector */
+        for (String dato : datos) {
+            comboBox.addItem(dato);
+        }
     }
     
 }
