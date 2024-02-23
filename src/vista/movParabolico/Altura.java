@@ -12,9 +12,9 @@ public class Altura extends javax.swing.JPanel {
         initComponents(); 
         vf = new VisualizarFormula("h = \\frac{v_{iy} + v_{fy}} {2} * t");
         labelFUno.setIcon(vf.getIconTitulos());
-        vf = new VisualizarFormula("h = \\");
+        vf = new VisualizarFormula("h = \\frac{v_{gy}^2 + v_{iy}^2} {2 * g}");
         labelFDos.setIcon(vf.getIconTitulos());
-        vf = new VisualizarFormula("h = ");
+        vf = new VisualizarFormula("h = \\frac{v_i^2 * sen(θ)^2} {2 * g}");
         labelFTres.setIcon(vf.getIconTitulos());
         seleccionFUno();
         mostrarFUno();

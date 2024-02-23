@@ -4,13 +4,16 @@ public class ModeloMovParabolico {
 
     private double velocidadInicial;
     private double velocidadInicialEnX;
-    private double velocidadInicialEnY ;
-    private double gravedad ;
-    private double alcanceHorizontal ;
-    private double alcanceVertical ;
-    private double posicionInicialEnX ;
-    private double posicionInicialEnY ;
-    private double angulo ;
+    private double velocidadInicialEnY;
+    private double gravedad;
+    private double alcanceHorizontal;
+    private double alcanceVertical;
+    private double posicionInicialEnX;
+    private double posicionInicialEnY;
+    private double angulo;
+    private double tiempo;
+    private double tiempoVuelo;
+    private double velocidadFinalY;
 
     //----- Métodos getters y setters-----//
     public double getVelocidadInicial() {
@@ -84,55 +87,29 @@ public class ModeloMovParabolico {
     public void setAngulo(double angulo) {
         this.angulo = angulo;
     }
-    
-    
-    //----- Métodos para calcular ------//
-    //----- Tiempos -----//
-    public double calcularTiempoSubida() {
-        return (getVelocidadInicialEnY() / getGravedad());
+
+    public double getTiempo() {
+        return tiempo;
     }
 
-    public double calcularTiempoVuelo() {
-        return calcularTiempoSubida() * 2;
+    public void setTiempo(double tiempo) {
+        this.tiempo = tiempo;
     }
 
-    //----- Distancias -----//
-    public double calcularAlcanceHorizontalMaximo() {
-        return (Math.pow(getVelocidadInicial(), 2) * Math.sin(2 * getAngulo())) / getGravedad();
+    public double getTiempoVuelo() {
+        return tiempoVuelo;
     }
 
-    public double calcularAlturaMaxima() {
-        return (Math.pow(getVelocidadInicialEnY(), 2) / (2 * getGravedad()));
+    public void setTiempoVuelo(double tiempoVuelo) {
+        this.tiempoVuelo = tiempoVuelo;
     }
 
-    public double calcularAlcanceHorizontal(double tiempo) {
-        return getPosicionInicialEnX() + getVelocidadInicialEnX() * tiempo;
+    public double getVelocidadFinalY() {
+        return velocidadFinalY;
     }
 
-    public double calcularAltura(double tiempo) {
-        return getPosicionInicialEnY() + getVelocidadInicialEnY() * tiempo - (getGravedad() / 2) * Math.pow(tiempo, 2);
+    public void setVelocidadFinalY(double velocidadFinalY) {
+        this.velocidadFinalY = velocidadFinalY;
     }
 
-    //----- Velocidades ----//
-    public double calcularVelocidad() {
-        return Math.sqrt(Math.pow(getVelocidadInicialEnX(), 2) + Math.pow(getVelocidadInicialEnY(), 2));
-    }
-
-    public double calcularVelocidadEnX() {
-        return getVelocidadInicial() * Math.cos(getAngulo());
-    }
-
-    public double calcularVelocidadEnY() {
-        return getVelocidadInicial() * Math.sin(getAngulo());
-    }
-
-    //----- Angulo -----//
-    public double calcularAngulo() {
-        return Math.asin(getVelocidadInicialEnY() / getVelocidadInicial());
-    }
-
-    public double calcularAngulo(int a) {
-        return Math.acos(getVelocidadInicialEnX() / getVelocidadInicial());
-    }
-    
 }

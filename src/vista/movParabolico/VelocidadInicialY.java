@@ -12,7 +12,7 @@ public class VelocidadInicialY extends javax.swing.JPanel {
         initComponents(); 
         vf = new VisualizarFormula("v_{iy} = v_i * sen(θ)");
         labelFUno.setIcon(vf.getIconTitulos());
-        vf = new VisualizarFormula("v_{iy} = v_{fy} * g * t");
+        vf = new VisualizarFormula("v_{iy} = \\sqrt {v_{fy} - 2 * g * h}");
         labelFDos.setIcon(vf.getIconTitulos());
         vf = new VisualizarFormula("v_{iy} = \\frac{2 * h}{t} - v_{fy}");
         labelFTres.setIcon(vf.getIconTitulos());

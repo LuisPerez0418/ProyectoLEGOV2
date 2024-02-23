@@ -8,7 +8,8 @@ public class ControladorMovParabolico extends modelo.ModeloMovParabolico {
 
     public ControladorMovParabolico(double velocidadInicial, double velocidadInicialX,
             double velocidadInicialY, double gravedad, double alcHorizontal,
-            double alcVertical, double posInicialX, double posInicialY, double angulo) {
+            double alcVertical, double posInicialX, double posInicialY, double angulo,
+            double tiempo, double tiempoVuelo, double velocidadFinalY) {
         setVelocidadInicial(velocidadInicial);
         setVelocidadInicialEnX(velocidadInicialX);
         setVelocidadInicialEnY(velocidadInicialY);
@@ -18,87 +19,95 @@ public class ControladorMovParabolico extends modelo.ModeloMovParabolico {
         setPosicionInicialEnX(posInicialX);
         setPosicionInicialEnY(posInicialY);
         setAngulo(angulo);
+        setTiempo(tiempo);
+        setTiempoVuelo(tiempoVuelo);
+        setVelocidadFinalY(velocidadFinalY);
     }
 
     //----- Velocidad inicial ------//
     public double calcularVelocidadInicialFUno() {
-        return 0;
+        return Math.sqrt((2 * getGravedad() * getAlcanceVertical())
+                / (Math.pow(Math.sin(getAngulo()), 2)));
     }
-    
+
     public double calcularVelocidadInicialFDos() {
-        return 0;
+        return (getGravedad() * getTiempoVuelo()) / (2 * Math.sin(getAngulo()));
     }
-    
+
     public double calcularVelocidadInicialFTres() {
-        return 0;
+        return Math.sqrt((getGravedad() * getAlcanceHorizontal())
+                / Math.sin(2 * getAngulo()));
     }
-    
+
     //----- Velocidad inicial en X ------//
     public double calcularVelocidadInicialXFUno() {
-        return 0;
+        return getVelocidadInicial() * Math.cos(getAngulo());
     }
-    
+
     public double calcularVelocidadInicialXFDos() {
-        return 0;
+        return getPosicionInicialEnX() / getTiempo();
     }
-    
+
     public double calcularVelocidadInicialXFTres() {
-        return 0;
+        return Math.sqrt(Math.pow(getVelocidadInicial(), 2)
+                - Math.pow(getVelocidadInicialEnY(), 2));
     }
-    
+
     //----- Velocidad inicial en Y ------//
     public double calcularVelocidadInicialYFUno() {
-        return 0;
+        return getVelocidadInicial() * Math.sin(getAngulo());
     }
-    
+
     public double calcularVelocidadInicialYFDos() {
-        return 0;
+        return Math.sqrt(getVelocidadFinalY() - 2 * getGravedad() * getAlcanceVertical());
     }
-    
+
     public double calcularVelocidadInicialYFTres() {
-        return 0;
+        return (2 * getAlcanceVertical()) / (getTiempo()) - getVelocidadFinalY();
     }
-    
+
     //----- Tiempo ------//
     public double calcularTiempoFUno() {
-        return 0;
+        return (getVelocidadFinalY() + getVelocidadInicialEnY()) / getGravedad();
     }
-    
+
     public double calcularTiempoFDos() {
-        return 0;
+        return (2 * getAlcanceVertical()) / getVelocidadInicialEnY();
     }
-    
+
     public double calcularTiempoFTres() {
-        return 0;
+        return getAlcanceHorizontal() / getPosicionInicialEnX();
     }
-    
+
     //----- Altura -----//
     public double calcularAlturaFUno() {
-        return 0;
+        return ((getVelocidadInicialEnY() + getVelocidadFinalY()) / 2) * getTiempo();
     }
 
     public double calcularAlturaFDos() {
-        return 0;
+        return (0 - Math.pow(getVelocidadInicialEnY(), 2) + 0 - Math.pow(getVelocidadFinalY(), 2))
+                / (2 * getGravedad());
     }
 
     public double calcularAlturaFTres() {
-        return 0;
+        return (Math.pow(getVelocidadInicial(), 2) * Math.pow(getAngulo(), 2)) / (2 * getGravedad());
     }
-    
+
     //----- Alcance horizontal -----//
     public double calcularAlcHorizontal() {
-        return 0;
+        return (Math.pow(getVelocidadInicial(), 2) * Math.sin(2 * getAngulo()))
+                / getGravedad();
     }
 
     //----- Tiempo de vuelo -----//
     public double calcularTiempoVuelo() {
-        return 0;
+        return (2 * getVelocidadInicial() * Math.sin(getAngulo()))
+                / getGravedad();
     }
-    
+
     //----- Distancia -----//
     public double calcularDistancia() {
-        return 0;
+        return getVelocidadInicialEnX() * getTiempo();
     }
-    
-    
+
 }
