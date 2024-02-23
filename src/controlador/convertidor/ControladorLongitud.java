@@ -17,25 +17,6 @@ public class ControladorLongitud {
         return dato * 1609;
     }
 
-    //----- Métodos para mostrar conversión -----//
-    public void mostrarCentimetroMetro(double dato) {
-        double resultado;
-        resultado = dato / 100;
-        System.out.println(dato + " / 100 = " + resultado);
-    }
-
-    public void mostrarKilometroMetro(double dato) {
-        double resultado;
-        resultado = dato * 1000;
-        System.out.println(dato + " * 1000 = " + resultado);
-    }
-
-    public void mostrarMillaMetro(double dato) {
-        double resultado;
-        resultado = dato * 1609;
-        System.out.println(dato + " * 1609 = " + resultado);
-    }
-
     //----- Método condicional sistema internacional -----//
     public double convertirLongitud(double dato, String unidad){
         return switch (unidad) {

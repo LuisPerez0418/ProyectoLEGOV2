@@ -13,17 +13,25 @@ public class ControladorAngulo {
         return dato * (180 / Math.PI);
     }
 
-    //----- Métodos para mostrar conversión -----//
-    public void mostrarGradoRadian(double dato) {
-        double resultado;
-        resultado = dato * (Math.PI / 180);
-        System.out.println(dato + "* π / 180 = " + resultado);
+    //----- Método condicional sistema internacional -----//
+    public double convertirAngulo(double dato, String unidad){
+        return switch (unidad) {
+            case "grados" -> radianGrado(dato);
+            default -> dato;
+        };
     }
     
-    public void mostrarRadianGrado(double dato) {
-        double resultado;
-        resultado = dato * (180 / Math.PI);
-        System.out.println(dato + " * 180 / π = " + resultado);
-    }
+    //-----  Método para rellenar los combobox -----//
+    public static void rellenarCombo(JComboBox<String> comboBox) {
+        /* Iniciar los datos */
+        String [] datos = {"rad", "grados"};
+        /* Limpiar el JComboBox */
+        comboBox.removeAllItems();
 
+        /* Rellenar el JComboBox con los elementos del vector */
+        for (String dato : datos) {
+            comboBox.addItem(dato);
+        }
+    }
+    
 }

@@ -1,36 +1,33 @@
 package vista.movParabolico;
 
-import vista.tiroVertical.velocidadInicial.*;
+import controlador.ControladorMovParabolico;
 import controlador.Utilidades;
-import controlador.ControladorTiroVertical;
-import controlador.convertidor.ControladorLongitud;
 import controlador.convertidor.ControladorTiempo;
+import controlador.convertidor.ControladorVelocidad;
 import javax.swing.JOptionPane;
 
 public class Distancia extends javax.swing.JPanel {
 
     public Distancia() {
         initComponents();
+        rellenar();
     }
 
-    private ControladorTiroVertical tiro = new ControladorTiroVertical();
-    private ControladorLongitud ml = new ControladorLongitud();
+    private ControladorMovParabolico mov = new ControladorMovParabolico();
     private ControladorTiempo mt = new ControladorTiempo();
+    private ControladorVelocidad mv = new ControladorVelocidad();
     private Utilidades util = new Utilidades();
 
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         jLabel5 = new javax.swing.JLabel();
-        txtAltura = new javax.swing.JTextField();
-        cmbAltura = new javax.swing.JComboBox<>();
+        txtVelocidad = new javax.swing.JTextField();
+        cmbVelocidad = new javax.swing.JComboBox<>();
         jLabel2 = new javax.swing.JLabel();
         txtTiempo = new javax.swing.JTextField();
         cmbTiempo = new javax.swing.JComboBox<>();
         jLabel3 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        cmbGravedad = new javax.swing.JComboBox<>();
-        txtGravedad = new javax.swing.JTextField();
         btnLimpiar = new javax.swing.JButton();
         btnCalcular = new javax.swing.JButton();
 
@@ -46,29 +43,28 @@ public class Distancia extends javax.swing.JPanel {
         jLabel5.setText("Digite los datos");
         add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, -1, -1));
 
-        txtAltura.setBackground(new java.awt.Color(255, 255, 255));
-        txtAltura.setFont(new java.awt.Font("Montserrat Medium", 0, 12)); // NOI18N
-        txtAltura.setForeground(new java.awt.Color(0, 0, 0));
-        txtAltura.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 204, 204), 1, true));
-        add(txtAltura, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, 195, 32));
+        txtVelocidad.setBackground(new java.awt.Color(255, 255, 255));
+        txtVelocidad.setFont(new java.awt.Font("Montserrat Medium", 0, 12)); // NOI18N
+        txtVelocidad.setForeground(new java.awt.Color(0, 0, 0));
+        txtVelocidad.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 204, 204), 1, true));
+        add(txtVelocidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, 195, 32));
 
-        cmbAltura.setBackground(new java.awt.Color(255, 255, 255));
-        cmbAltura.setFont(new java.awt.Font("Montserrat Medium", 0, 12)); // NOI18N
-        cmbAltura.setForeground(new java.awt.Color(0, 0, 0));
-        cmbAltura.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "cm", "m", "km", "mi" }));
-        cmbAltura.setBorder(null);
-        add(cmbAltura, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 110, 73, 32));
+        cmbVelocidad.setBackground(new java.awt.Color(255, 255, 255));
+        cmbVelocidad.setFont(new java.awt.Font("Montserrat Medium", 0, 12)); // NOI18N
+        cmbVelocidad.setForeground(new java.awt.Color(0, 0, 0));
+        cmbVelocidad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "cm", "m", "km", "mi" }));
+        cmbVelocidad.setBorder(null);
+        add(cmbVelocidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 110, 73, 32));
 
         jLabel2.setBackground(new java.awt.Color(0, 0, 0));
         jLabel2.setFont(new java.awt.Font("Montserrat Medium", 0, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel2.setText("Altura");
+        jLabel2.setText("Velocidad inicial en X");
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, -1, -1));
 
         txtTiempo.setBackground(new java.awt.Color(255, 255, 255));
         txtTiempo.setFont(new java.awt.Font("Montserrat Medium", 0, 12)); // NOI18N
         txtTiempo.setForeground(new java.awt.Color(0, 0, 0));
-        txtTiempo.setText("0");
         txtTiempo.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 204, 204), 1, true));
         add(txtTiempo, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 180, 195, 32));
 
@@ -84,25 +80,6 @@ public class Distancia extends javax.swing.JPanel {
         jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("Tiempo");
         add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 160, -1, -1));
-
-        jLabel7.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel7.setFont(new java.awt.Font("Montserrat Medium", 0, 14)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel7.setText("Gravedad");
-        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 90, -1, -1));
-
-        cmbGravedad.setBackground(new java.awt.Color(255, 255, 255));
-        cmbGravedad.setFont(new java.awt.Font("Montserrat Medium", 0, 12)); // NOI18N
-        cmbGravedad.setForeground(new java.awt.Color(0, 0, 0));
-        cmbGravedad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "m/s²" }));
-        cmbGravedad.setBorder(null);
-        add(cmbGravedad, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 110, 73, 32));
-
-        txtGravedad.setBackground(new java.awt.Color(255, 255, 255));
-        txtGravedad.setFont(new java.awt.Font("Montserrat Medium", 0, 12)); // NOI18N
-        txtGravedad.setForeground(new java.awt.Color(0, 0, 0));
-        txtGravedad.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 204, 204), 1, true));
-        add(txtGravedad, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 110, 195, 32));
 
         btnLimpiar.setBackground(new java.awt.Color(204, 204, 204));
         btnLimpiar.setFont(new java.awt.Font("Montserrat Medium", 0, 12)); // NOI18N
@@ -135,37 +112,37 @@ public class Distancia extends javax.swing.JPanel {
     }//GEN-LAST:event_btnLimpiarActionPerformed
 
     private void btnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularActionPerformed
-        double altura;
+        double velocidad;
         double tiempo;
-        double gravedad;
         try {
-            altura = ml.convertirLongitud(Double.parseDouble(txtAltura.getText()),
-                    cmbAltura.getSelectedItem().toString());
+            velocidad = mv.convertirVelocidad(Double.parseDouble(txtVelocidad.getText()),
+                    cmbVelocidad.getSelectedItem().toString());
             tiempo = mt.convertirTiempo(Double.parseDouble(txtTiempo.getText()),
                     cmbTiempo.getSelectedItem().toString());
-            gravedad = Double.parseDouble(txtGravedad.getText());
-            tiro = new ControladorTiroVertical(0, 0, gravedad, tiempo, altura);
+            mov = new ControladorMovParabolico(0, velocidad, 0, 0, 0, 0,
+                    0, 0, 0, tiempo, 0, 0);
             JOptionPane.showMessageDialog(this,
-                    "Distancia calculada. \n" + tiro.calcularVelocidadInicialFDos() + " m/s");
+                    "Distancia calculada. \n" + mov.calcularDistancia() + " m");
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this,
                     "Debe rellenar todos los campos para continuar.");
         }
     }//GEN-LAST:event_btnCalcularActionPerformed
 
+    private void rellenar(){
+        mv.rellenarCombo(cmbVelocidad);
+        mt.rellenarCombo(cmbTiempo);
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCalcular;
     private javax.swing.JButton btnLimpiar;
-    private javax.swing.JComboBox<String> cmbAltura;
-    private javax.swing.JComboBox<String> cmbGravedad;
     private javax.swing.JComboBox<String> cmbTiempo;
+    private javax.swing.JComboBox<String> cmbVelocidad;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JTextField txtAltura;
-    private javax.swing.JTextField txtGravedad;
     private javax.swing.JTextField txtTiempo;
+    private javax.swing.JTextField txtVelocidad;
     // End of variables declaration//GEN-END:variables
 }
