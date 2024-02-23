@@ -13,7 +13,7 @@ public class Gravedad extends javax.swing.JPanel {
         labelFUno.setIcon(vf.getIconTitulos());
         vf = new VisualizarFormula("g = \\frac{v_f-v_i}{t}-v_i");
         labelFDos.setIcon(vf.getIconTitulos());
-        vf = new VisualizarFormula("g = \\frac{v_f^2-v_i^2}{2*h}");
+        vf = new VisualizarFormula("g = \\frac{h - (v_i * t)}{\\frac{1}{2}*t^2}");
         labelFTres.setIcon(vf.getIconTitulos());
         seleccionFUno();
         mostrarFUno();

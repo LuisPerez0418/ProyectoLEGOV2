@@ -1,24 +1,26 @@
-package vista.caidaLibre;
+package vista.movParabolico;
 
+import controlador.Utilidades;
 import controlador.VisualizarFormula;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import javax.swing.ImageIcon;
 
-public class VelocidadInicial extends javax.swing.JPanel {
+public class Tiempo extends javax.swing.JPanel {
 
-    public VelocidadInicial() {
+    public Tiempo() {
         initComponents(); 
-        vf = new VisualizarFormula("v_i = v_f - g * t");
+        vf = new VisualizarFormula("t = \\frac{v_{fy} + v_{iy}} {g}");
         labelFUno.setIcon(vf.getIconTitulos());
-        vf = new VisualizarFormula("v_i = 2 * \\frac{h}{t} - v_f");
+        vf = new VisualizarFormula("t = \\frac{2 * h} {v_{iy}}");
         labelFDos.setIcon(vf.getIconTitulos());
-        vf = new VisualizarFormula("v_i = \\frac{h}{t} - \\frac{1}{2} * g * t");
+        vf = new VisualizarFormula("t = \\frac{x} {v_{ix}}");
         labelFTres.setIcon(vf.getIconTitulos());
         seleccionFUno();
         mostrarFUno();
     }
     private VisualizarFormula vf;
+    private Utilidades ul;
 
     //----- Paleta de colores -----//
     Color letrasBase = new Color(0, 0, 0);
@@ -199,13 +201,14 @@ public class VelocidadInicial extends javax.swing.JPanel {
 
     //----- Rellenar paneles ------//
     public void mostrarFUno() {
-        /*vista.caidaLibre.velocidadInicial.FormulaUno vista = new vista.caidaLibre.velocidadInicial.FormulaUno();
+      /*  vista.mrua.aceleracion.FormulaUno vista = new vista.mrua.aceleracion.FormulaUno();
         vista.setSize(860, 470);
         vista.setLocation(0, 0);
         bg.removeAll();
         bg.add(vista, BorderLayout.CENTER);
         bg.revalidate();
-        bg.repaint();*/
+        bg.repaint();
+        */
     }
     
     public void mostrarFDos() {
