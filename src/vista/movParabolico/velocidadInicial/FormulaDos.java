@@ -150,8 +150,8 @@ public class FormulaDos extends javax.swing.JPanel {
         try {
             tiempoVuelo = mt.convertirTiempo(Double.parseDouble(txtTiempoVuelo.getText()),
                     cmbTiempoVuelo.getSelectedItem().toString());
-            angulo = ma.convertirAngulo(Double.parseDouble(txtTiempoVuelo.getText()),
-                    cmbTiempoVuelo.getSelectedItem().toString());
+            angulo = ma.convertirAngulo(Double.parseDouble(txtAngulo.getText()),
+                    cmbAngulo.getSelectedItem().toString());
             gravedad = Double.parseDouble(txtGravedad.getText());
             mp = new ControladorMovParabolico(0, 0, 0, gravedad,
                     0, 0, 0, 0, angulo, 0, tiempoVuelo, 0);

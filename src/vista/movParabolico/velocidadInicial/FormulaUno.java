@@ -148,8 +148,8 @@ public class FormulaUno extends javax.swing.JPanel {
         try {
             altura = ml.convertirLongitud(Double.parseDouble(txtAltura.getText()),
                     cmbAltura.getSelectedItem().toString());
-            angulo = ma.convertirAngulo(Double.parseDouble(txtAltura.getText()),
-                    cmbAltura.getSelectedItem().toString());
+            angulo = ma.convertirAngulo(Double.parseDouble(txtAngulo.getText()),
+                    cmbAngulo.getSelectedItem().toString());
             gravedad = Double.parseDouble(txtGravedad.getText());
             mp = new ControladorMovParabolico(0, 0, 0, gravedad,
                     0, altura, 0, 0, angulo, 0, 0, 0);

@@ -149,8 +149,8 @@ public class FormulaTres extends javax.swing.JPanel {
         try {
             alcanceHorizontal = ml.convertirLongitud(Double.parseDouble(txtAlcanceHorizontal.getText()),
                     cmbAlcanceHorizontal.getSelectedItem().toString());
-            angulo = ma.convertirAngulo(Double.parseDouble(txtAlcanceHorizontal.getText()),
-                    cmbAlcanceHorizontal.getSelectedItem().toString());
+            angulo = ma.convertirAngulo(Double.parseDouble(txtAngulo.getText()),
+                    cmbAngulo.getSelectedItem().toString());
             gravedad = Double.parseDouble(txtGravedad.getText());
             mp = new ControladorMovParabolico(0, 0, 0, gravedad,
                     alcanceHorizontal, 0, 0, 0, angulo, 0, 0, 0);

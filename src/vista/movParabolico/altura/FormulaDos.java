@@ -73,7 +73,7 @@ public class FormulaDos extends javax.swing.JPanel {
         jLabel7.setBackground(new java.awt.Color(0, 0, 0));
         jLabel7.setFont(new java.awt.Font("Montserrat Medium", 0, 14)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel7.setText("Velocidad inicial");
+        jLabel7.setText("Velocidad inicial en y");
         add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, -1, -1));
 
         cmbVelocidadInicial.setBackground(new java.awt.Color(255, 255, 255));
@@ -96,7 +96,7 @@ public class FormulaDos extends javax.swing.JPanel {
         jLabel9.setBackground(new java.awt.Color(0, 0, 0));
         jLabel9.setFont(new java.awt.Font("Montserrat Medium", 0, 14)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel9.setText("Velocidad final");
+        jLabel9.setText("Velocidad final en y");
         add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 90, -1, -1));
 
         cmbVelocidadFinal.setBackground(new java.awt.Color(255, 255, 255));
@@ -148,8 +148,8 @@ public class FormulaDos extends javax.swing.JPanel {
         try {
             velocidadInicialy = mv.convertirVelocidad(Double.parseDouble(txtVelocidadInicial.getText()),
                     cmbVelocidadInicial.getSelectedItem().toString());
-            velocidadFinal = mv.convertirVelocidad(Double.parseDouble(txtVelocidadInicial.getText()),
-                    cmbVelocidadInicial.getSelectedItem().toString());
+            velocidadFinal = mv.convertirVelocidad(Double.parseDouble(txtVelocidadFinal.getText()),
+                    cmbVelocidadFinal.getSelectedItem().toString());
             gravedad = Double.parseDouble(txtGravedad.getText());
             mp = new ControladorMovParabolico(0, 0, velocidadInicialy, gravedad,
                     0, 0, 0, 0, 0, 0, 0, velocidadFinal);

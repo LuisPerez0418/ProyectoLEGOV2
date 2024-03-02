@@ -150,8 +150,8 @@ public class FormulaTres extends javax.swing.JPanel {
         try {
             velocidadInicial = mv.convertirVelocidad(Double.parseDouble(txtVelocidadInicial.getText()),
                     cmbVelocidadInicial.getSelectedItem().toString());
-            angulo = ma.convertirAngulo(Double.parseDouble(txtVelocidadInicial.getText()),
-                    cmbVelocidadInicial.getSelectedItem().toString());
+            angulo = ma.convertirAngulo(Double.parseDouble(txtAngulo.getText()),
+                    cmbAngulo.getSelectedItem().toString());
             gravedad = Double.parseDouble(txtGravedad.getText());
             mp = new ControladorMovParabolico(velocidadInicial, 0, 0, gravedad,
                     0, 0, 0, 0, angulo, 0, 0, 0);

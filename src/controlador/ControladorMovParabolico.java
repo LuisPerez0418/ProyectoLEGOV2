@@ -45,7 +45,7 @@ public class ControladorMovParabolico extends modelo.ModeloMovParabolico {
     }
 
     public double calcularVelocidadInicialXFDos() {
-        return getPosicionInicialEnX() / getTiempo();
+        return getAlcanceHorizontal() / getTiempo();
     }
 
     public double calcularVelocidadInicialXFTres() {

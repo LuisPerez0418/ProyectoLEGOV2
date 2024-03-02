@@ -201,22 +201,33 @@ public class VelocidadInicialY extends javax.swing.JPanel {
 
     //----- Rellenar paneles ------//
     public void mostrarFUno() {
-      /*  vista.mrua.aceleracion.FormulaUno vista = new vista.mrua.aceleracion.FormulaUno();
+        vista.movParabolico.velocidadInicialY.FormulaUno vista = new vista.movParabolico.velocidadInicialY.FormulaUno();
         vista.setSize(860, 470);
         vista.setLocation(0, 0);
         bg.removeAll();
         bg.add(vista, BorderLayout.CENTER);
         bg.revalidate();
         bg.repaint();
-        */
     }
     
     public void mostrarFDos() {
-
+        vista.movParabolico.velocidadInicialY.FormulaDos vista = new vista.movParabolico.velocidadInicialY.FormulaDos();
+        vista.setSize(860, 470);
+        vista.setLocation(0, 0);
+        bg.removeAll();
+        bg.add(vista, BorderLayout.CENTER);
+        bg.revalidate();
+        bg.repaint();
     }
     
     public void mostrarFTres() {
-
+        vista.movParabolico.velocidadInicialY.FormulaTres vista = new vista.movParabolico.velocidadInicialY.FormulaTres();
+        vista.setSize(860, 470);
+        vista.setLocation(0, 0);
+        bg.removeAll();
+        bg.add(vista, BorderLayout.CENTER);
+        bg.revalidate();
+        bg.repaint();
     }
     //----- Fin del relleno ------//
     
