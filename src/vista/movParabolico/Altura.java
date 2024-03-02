@@ -12,7 +12,7 @@ public class Altura extends javax.swing.JPanel {
         initComponents(); 
         vf = new VisualizarFormula("h = \\frac{v_{iy} + v_{fy}} {2} * t");
         labelFUno.setIcon(vf.getIconTitulos());
-        vf = new VisualizarFormula("h = \\frac{v_{gy}^2 + v_{iy}^2} {2 * g}");
+        vf = new VisualizarFormula("h = \\frac{v_{fy}^2 + v_{iy}^2} {2 * g}");
         labelFDos.setIcon(vf.getIconTitulos());
         vf = new VisualizarFormula("h = \\frac{v_i^2 * sen(θ)^2} {2 * g}");
         labelFTres.setIcon(vf.getIconTitulos());
@@ -201,22 +201,33 @@ public class Altura extends javax.swing.JPanel {
 
     //----- Rellenar paneles ------//
     public void mostrarFUno() {
-      /*  vista.mrua.aceleracion.FormulaUno vista = new vista.mrua.aceleracion.FormulaUno();
+        vista.movParabolico.altura.FormulaUno vista = new vista.movParabolico.altura.FormulaUno();
         vista.setSize(860, 470);
         vista.setLocation(0, 0);
         bg.removeAll();
         bg.add(vista, BorderLayout.CENTER);
         bg.revalidate();
         bg.repaint();
-        */
     }
     
     public void mostrarFDos() {
-
+        vista.movParabolico.altura.FormulaDos vista = new vista.movParabolico.altura.FormulaDos();
+        vista.setSize(860, 470);
+        vista.setLocation(0, 0);
+        bg.removeAll();
+        bg.add(vista, BorderLayout.CENTER);
+        bg.revalidate();
+        bg.repaint();
     }
     
     public void mostrarFTres() {
-
+        vista.movParabolico.altura.FormulaTres vista = new vista.movParabolico.altura.FormulaTres();
+        vista.setSize(860, 470);
+        vista.setLocation(0, 0);
+        bg.removeAll();
+        bg.add(vista, BorderLayout.CENTER);
+        bg.revalidate();
+        bg.repaint();
     }
     //----- Fin del relleno ------//
     
