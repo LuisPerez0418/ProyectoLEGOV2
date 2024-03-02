@@ -9,7 +9,7 @@ import javax.swing.ImageIcon;
 public class Tiempo extends javax.swing.JPanel {
 
     public Tiempo() {
-        initComponents(); 
+        initComponents();
         vf = new VisualizarFormula("t = \\frac{v_{fy} + v_{iy}} {g}");
         labelFUno.setIcon(vf.getIconTitulos());
         vf = new VisualizarFormula("t = \\frac{2 * h} {v_{iy}}");
@@ -201,25 +201,36 @@ public class Tiempo extends javax.swing.JPanel {
 
     //----- Rellenar paneles ------//
     public void mostrarFUno() {
-      /*  vista.mrua.aceleracion.FormulaUno vista = new vista.mrua.aceleracion.FormulaUno();
+        vista.movParabolico.tiempo.FormulaUno vista = new vista.movParabolico.tiempo.FormulaUno();
         vista.setSize(860, 470);
         vista.setLocation(0, 0);
         bg.removeAll();
         bg.add(vista, BorderLayout.CENTER);
         bg.revalidate();
         bg.repaint();
-        */
     }
-    
+
     public void mostrarFDos() {
-
+        vista.movParabolico.tiempo.FormulaDos vista = new vista.movParabolico.tiempo.FormulaDos();
+        vista.setSize(860, 470);
+        vista.setLocation(0, 0);
+        bg.removeAll();
+        bg.add(vista, BorderLayout.CENTER);
+        bg.revalidate();
+        bg.repaint();
     }
-    
-    public void mostrarFTres() {
 
+    public void mostrarFTres() {
+        vista.movParabolico.tiempo.FormulaTres vista = new vista.movParabolico.tiempo.FormulaTres();
+        vista.setSize(860, 470);
+        vista.setLocation(0, 0);
+        bg.removeAll();
+        bg.add(vista, BorderLayout.CENTER);
+        bg.revalidate();
+        bg.repaint();
     }
     //----- Fin del relleno ------//
-    
+
     //----- Variaciones al entrar y salir el mouse ------//
     private void seleccionFUno() {
         bgFUno.setIcon(new ImageIcon(getClass().getResource("/imagenes/utiliarios/seleccionFormulaColor.png")));
