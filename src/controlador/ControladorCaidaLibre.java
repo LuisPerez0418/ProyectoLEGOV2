@@ -2,11 +2,11 @@ package controlador;
 
 public class ControladorCaidaLibre extends modelo.ModeloMovVertical {
 
-    public void ControladorCaidaLibre() {
+    public ControladorCaidaLibre() {
 
     }
 
-    public void ControladorCaidaLibre(double velocidadInicial,
+    public ControladorCaidaLibre(double velocidadInicial,
             double velocidadFinal, double altura, double tiempo,
             double tiempoDCaida, double gravedad) {
         setVelocidadInicial(velocidadInicial);

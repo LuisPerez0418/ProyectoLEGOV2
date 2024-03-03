@@ -9,7 +9,7 @@ public class VelocidadFinal extends javax.swing.JPanel {
 
     public VelocidadFinal() {
         initComponents(); 
-        vf = new VisualizarFormula("v_f = 2 * \\frac{h}{t} - v_f");
+        vf = new VisualizarFormula("v_f = 2 * \\frac{h}{t} - v_i");
         labelFUno.setIcon(vf.getIconTitulos());
         vf = new VisualizarFormula("v_f = v_i + g * t");
         labelFDos.setIcon(vf.getIconTitulos());
@@ -199,22 +199,33 @@ public class VelocidadFinal extends javax.swing.JPanel {
 
     //----- Rellenar paneles ------//
     public void mostrarFUno() {
-      /*  vista.mrua.aceleracion.FormulaUno vista = new vista.mrua.aceleracion.FormulaUno();
+        vista.caidaLibre.velocidadFinal.FormulaUno vista = new vista.caidaLibre.velocidadFinal.FormulaUno();
         vista.setSize(860, 470);
         vista.setLocation(0, 0);
         bg.removeAll();
         bg.add(vista, BorderLayout.CENTER);
         bg.revalidate();
         bg.repaint();
-        */
     }
     
     public void mostrarFDos() {
-
+        vista.caidaLibre.velocidadFinal.FormulaDos vista = new vista.caidaLibre.velocidadFinal.FormulaDos();
+        vista.setSize(860, 470);
+        vista.setLocation(0, 0);
+        bg.removeAll();
+        bg.add(vista, BorderLayout.CENTER);
+        bg.revalidate();
+        bg.repaint();
     }
     
     public void mostrarFTres() {
-
+        vista.caidaLibre.velocidadFinal.FormulaTres vista = new vista.caidaLibre.velocidadFinal.FormulaTres();
+        vista.setSize(860, 470);
+        vista.setLocation(0, 0);
+        bg.removeAll();
+        bg.add(vista, BorderLayout.CENTER);
+        bg.revalidate();
+        bg.repaint();
     }
     //----- Fin del relleno ------//
     

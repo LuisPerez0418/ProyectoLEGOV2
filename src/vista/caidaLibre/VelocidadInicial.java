@@ -199,21 +199,33 @@ public class VelocidadInicial extends javax.swing.JPanel {
 
     //----- Rellenar paneles ------//
     public void mostrarFUno() {
-        /*vista.caidaLibre.velocidadInicial.FormulaUno vista = new vista.caidaLibre.velocidadInicial.FormulaUno();
+        vista.caidaLibre.velocidadInicial.FormulaUno vista = new vista.caidaLibre.velocidadInicial.FormulaUno();
         vista.setSize(860, 470);
         vista.setLocation(0, 0);
         bg.removeAll();
         bg.add(vista, BorderLayout.CENTER);
         bg.revalidate();
-        bg.repaint();*/
+        bg.repaint();
     }
     
     public void mostrarFDos() {
-
+        vista.caidaLibre.velocidadInicial.FormulaDos vista = new vista.caidaLibre.velocidadInicial.FormulaDos();
+        vista.setSize(860, 470);
+        vista.setLocation(0, 0);
+        bg.removeAll();
+        bg.add(vista, BorderLayout.CENTER);
+        bg.revalidate();
+        bg.repaint();
     }
     
     public void mostrarFTres() {
-
+        vista.caidaLibre.velocidadInicial.FormulaTres vista = new vista.caidaLibre.velocidadInicial.FormulaTres();
+        vista.setSize(860, 470);
+        vista.setLocation(0, 0);
+        bg.removeAll();
+        bg.add(vista, BorderLayout.CENTER);
+        bg.revalidate();
+        bg.repaint();
     }
     //----- Fin del relleno ------//
     

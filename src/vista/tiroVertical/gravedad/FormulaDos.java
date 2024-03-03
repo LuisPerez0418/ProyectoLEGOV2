@@ -1,9 +1,8 @@
-package vista.tiroVertical.altura;
+package vista.tiroVertical.gravedad;
 
-import controlador.ControladorMovParabolico;
 import controlador.ControladorTiroVertical;
 import controlador.Utilidades;
-import controlador.convertidor.ControladorTiempo;
+import controlador.convertidor.ControladorLongitud;
 import controlador.convertidor.ControladorVelocidad;
 import javax.swing.JOptionPane;
 
@@ -15,9 +14,8 @@ public class FormulaDos extends javax.swing.JPanel {
     }
 
     private ControladorTiroVertical tiro = new ControladorTiroVertical();
-    private ControladorMovParabolico mp = new ControladorMovParabolico();
     private ControladorVelocidad mv = new ControladorVelocidad();
-    private ControladorTiempo mt = new ControladorTiempo();
+    private ControladorLongitud ml = new ControladorLongitud();
     private Utilidades util = new Utilidades();
 
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -32,8 +30,8 @@ public class FormulaDos extends javax.swing.JPanel {
         jLabel9 = new javax.swing.JLabel();
         cmbVelocidadFinal = new javax.swing.JComboBox<>();
         txtVelocidadFinal = new javax.swing.JTextField();
-        txtTiempo = new javax.swing.JTextField();
-        cmbTiempo = new javax.swing.JComboBox<>();
+        txtAltura = new javax.swing.JTextField();
+        cmbAltura = new javax.swing.JComboBox<>();
         jLabel3 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
@@ -113,51 +111,51 @@ public class FormulaDos extends javax.swing.JPanel {
         txtVelocidadFinal.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 204, 204), 1, true));
         add(txtVelocidadFinal, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 110, 195, 32));
 
-        txtTiempo.setBackground(new java.awt.Color(255, 255, 255));
-        txtTiempo.setFont(new java.awt.Font("Montserrat Medium", 0, 12)); // NOI18N
-        txtTiempo.setForeground(new java.awt.Color(0, 0, 0));
-        txtTiempo.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 204, 204), 1, true));
-        txtTiempo.addActionListener(new java.awt.event.ActionListener() {
+        txtAltura.setBackground(new java.awt.Color(255, 255, 255));
+        txtAltura.setFont(new java.awt.Font("Montserrat Medium", 0, 12)); // NOI18N
+        txtAltura.setForeground(new java.awt.Color(0, 0, 0));
+        txtAltura.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 204, 204), 1, true));
+        txtAltura.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtTiempoActionPerformed(evt);
+                txtAlturaActionPerformed(evt);
             }
         });
-        add(txtTiempo, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 180, 195, 32));
+        add(txtAltura, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 180, 195, 32));
 
-        cmbTiempo.setBackground(new java.awt.Color(255, 255, 255));
-        cmbTiempo.setFont(new java.awt.Font("Montserrat Medium", 0, 12)); // NOI18N
-        cmbTiempo.setForeground(new java.awt.Color(0, 0, 0));
-        cmbTiempo.setBorder(null);
-        add(cmbTiempo, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 180, 73, 32));
+        cmbAltura.setBackground(new java.awt.Color(255, 255, 255));
+        cmbAltura.setFont(new java.awt.Font("Montserrat Medium", 0, 12)); // NOI18N
+        cmbAltura.setForeground(new java.awt.Color(0, 0, 0));
+        cmbAltura.setBorder(null);
+        add(cmbAltura, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 180, 73, 32));
 
         jLabel3.setBackground(new java.awt.Color(0, 0, 0));
         jLabel3.setFont(new java.awt.Font("Montserrat Medium", 0, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel3.setText("Tiempo");
+        jLabel3.setText("Altura");
         add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 160, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed
         util.limpiarCampos(this);
-        txtTiempo.setText("0");
+        txtAltura.setText("0");
     }//GEN-LAST:event_btnLimpiarActionPerformed
 
     private void btnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularActionPerformed
         double velocidadInicial;
         double velocidadFinal;
-        double tiempo;
+        double altura;
         try {
             velocidadInicial = mv.convertirVelocidad(Double.parseDouble(txtVelocidadInicial.getText()),
                     cmbVelocidadInicial.getSelectedItem().toString());
             velocidadFinal = mv.convertirVelocidad(Double.parseDouble(txtVelocidadFinal.getText()),
                     cmbVelocidadFinal.getSelectedItem().toString());
-            tiempo = mt.convertirTiempo(Double.parseDouble(txtTiempo.getText()),
-                    cmbTiempo.getSelectedItem().toString());
-            tiro = new ControladorTiroVertical(velocidadInicial, velocidadFinal, 0, tiempo, 0);
+            altura = ml.convertirLongitud(Double.parseDouble(txtAltura.getText()),
+                    cmbAltura.getSelectedItem().toString());
+            tiro = new ControladorTiroVertical(velocidadInicial, velocidadFinal, 0, 0, altura);
             //------ Mostrar cálculos -----//
             if (velocidadFinal > velocidadInicial){
                 JOptionPane.showMessageDialog(this,
-                    "Altura calculada. \n" + mp.calcularAlturaFDos() + " m");
+                    "Gravedad calculada. \n" + tiro.calcularGravedadFDos() + " m/s²");
             util.limpiarCampos(this);
             } else {
                 JOptionPane.showMessageDialog(this,
@@ -173,12 +171,12 @@ public class FormulaDos extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtVelocidadInicialActionPerformed
 
-    private void txtTiempoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTiempoActionPerformed
+    private void txtAlturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAlturaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtTiempoActionPerformed
+    }//GEN-LAST:event_txtAlturaActionPerformed
 
     private void rellenarCombo() {
-        mt.rellenarCombo(cmbTiempo);
+        ml.rellenarCombo(cmbAltura);
         mv.rellenarCombo(cmbVelocidadInicial);
         mv.rellenarCombo(cmbVelocidadFinal);
     }
@@ -186,14 +184,14 @@ public class FormulaDos extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCalcular;
     private javax.swing.JButton btnLimpiar;
-    private javax.swing.JComboBox<String> cmbTiempo;
+    private javax.swing.JComboBox<String> cmbAltura;
     private javax.swing.JComboBox<String> cmbVelocidadFinal;
     private javax.swing.JComboBox<String> cmbVelocidadInicial;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JTextField txtTiempo;
+    private javax.swing.JTextField txtAltura;
     private javax.swing.JTextField txtVelocidadFinal;
     private javax.swing.JTextField txtVelocidadInicial;
     // End of variables declaration//GEN-END:variables
