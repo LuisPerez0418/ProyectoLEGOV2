@@ -199,21 +199,33 @@ public class Tiempo extends javax.swing.JPanel {
 
     //----- Rellenar paneles ------//
     public void mostrarFUno() {
-        /*vista.mrua.aceleracion.FormulaUno vista = new vista.mrua.aceleracion.FormulaUno();
+        vista.tiroVertical.tiempo.FormulaUno vista = new vista.tiroVertical.tiempo.FormulaUno();
         vista.setSize(860, 470);
         vista.setLocation(0, 0);
         bg.removeAll();
         bg.add(vista, BorderLayout.CENTER);
         bg.revalidate();
-        bg.repaint();*/
+        bg.repaint();
     }
     
     public void mostrarFDos() {
-
+        vista.tiroVertical.tiempo.FormulaDos vista = new vista.tiroVertical.tiempo.FormulaDos();
+        vista.setSize(860, 470);
+        vista.setLocation(0, 0);
+        bg.removeAll();
+        bg.add(vista, BorderLayout.CENTER);
+        bg.revalidate();
+        bg.repaint();
     }
     
     public void mostrarFTres() {
-
+        vista.tiroVertical.tiempo.FormulaTres vista = new vista.tiroVertical.tiempo.FormulaTres();
+        vista.setSize(860, 470);
+        vista.setLocation(0, 0);
+        bg.removeAll();
+        bg.add(vista, BorderLayout.CENTER);
+        bg.revalidate();
+        bg.repaint();
     }
     //----- Fin del relleno ------//
     

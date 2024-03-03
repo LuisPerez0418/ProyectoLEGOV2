@@ -16,6 +16,7 @@ public class Altura extends javax.swing.JPanel {
         vf = new VisualizarFormula("h = \\frac{v_f^2 + v_i^2}{2 * g}");
         labelFTres.setIcon(vf.getIconTitulos());
         seleccionFUno();
+        mostrarFUno();
     }
     private VisualizarFormula vf;
 
@@ -198,19 +199,33 @@ public class Altura extends javax.swing.JPanel {
 
     //----- Rellenar paneles ------//
     public void mostrarFUno() {
-        /*vista.mrua.aceleracion.FormulaUno vista = new vista.mrua.aceleracion.FormulaUno();
+        vista.tiroVertical.altura.FormulaUno vista = new vista.tiroVertical.altura.FormulaUno();
         vista.setSize(860, 470);
         vista.setLocation(0, 0);
         bg.removeAll();
         bg.add(vista, BorderLayout.CENTER);
         bg.revalidate();
-        bg.repaint();*/
+        bg.repaint();
     }
     
     public void mostrarFDos() {
+        vista.tiroVertical.altura.FormulaDos vista = new vista.tiroVertical.altura.FormulaDos();
+        vista.setSize(860, 470);
+        vista.setLocation(0, 0);
+        bg.removeAll();
+        bg.add(vista, BorderLayout.CENTER);
+        bg.revalidate();
+        bg.repaint();
     }
     
     public void mostrarFTres() {
+        vista.tiroVertical.altura.FormulaTres vista = new vista.tiroVertical.altura.FormulaTres();
+        vista.setSize(860, 470);
+        vista.setLocation(0, 0);
+        bg.removeAll();
+        bg.add(vista, BorderLayout.CENTER);
+        bg.revalidate();
+        bg.repaint();
     }
     //----- Fin del relleno ------//
     
