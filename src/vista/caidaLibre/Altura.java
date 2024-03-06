@@ -199,22 +199,33 @@ public class Altura extends javax.swing.JPanel {
 
     //----- Rellenar paneles ------//
     public void mostrarFUno() {
-      /*  vista.mrua.aceleracion.FormulaUno vista = new vista.mrua.aceleracion.FormulaUno();
+        vista.caidaLibre.altura.FormulaUno vista = new vista.caidaLibre.altura.FormulaUno();
         vista.setSize(860, 470);
         vista.setLocation(0, 0);
         bg.removeAll();
         bg.add(vista, BorderLayout.CENTER);
         bg.revalidate();
         bg.repaint();
-        */
     }
     
     public void mostrarFDos() {
-
+        vista.caidaLibre.altura.FormulaDos vista = new vista.caidaLibre.altura.FormulaDos();
+        vista.setSize(860, 470);
+        vista.setLocation(0, 0);
+        bg.removeAll();
+        bg.add(vista, BorderLayout.CENTER);
+        bg.revalidate();
+        bg.repaint();
     }
     
     public void mostrarFTres() {
-
+        vista.caidaLibre.altura.FormulaTres vista = new vista.caidaLibre.altura.FormulaTres();
+        vista.setSize(860, 470);
+        vista.setLocation(0, 0);
+        bg.removeAll();
+        bg.add(vista, BorderLayout.CENTER);
+        bg.revalidate();
+        bg.repaint();
     }
     //----- Fin del relleno ------//
     
